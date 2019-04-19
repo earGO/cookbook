@@ -1,0 +1,9 @@
+.card-double {
+  transition: 0.4s all;
+}
+
+.card-double:hover {
+  transform: scale(1.025);
+}
+
+/*# sourceMappingURL=CardDouble.css.map */

@@ -1,0 +1,9 @@
+$grow-size:1.025;
+
+.card-small-grow{
+  transition:0.4s all;
+}
+
+.card-small-grow:hover{
+  transform: scale($grow-size);
+}

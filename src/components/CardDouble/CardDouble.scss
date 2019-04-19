@@ -1,0 +1,10 @@
+@import "../../styles/_variables";
+
+
+.card-double{
+  transition:0.4s all;
+}
+
+.card-double:hover{
+  transform: scale($grow-size);
+}

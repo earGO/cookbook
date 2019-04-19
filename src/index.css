@@ -12,3 +12,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.bordered{
+  border:1px solid red;
+}
+
+.bordered-blue{
+  border:1px solid blue;
+}
+
+.card-text{
+  font-size:1vw;
+}
+
+.see-all-text{
+  font-size:1.5vw;
+}
+
+/*sticky footer CSS from Materialize*/
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.featured{
+  height:35vw;
+}
