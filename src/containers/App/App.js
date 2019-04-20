@@ -18,14 +18,15 @@ const mapStateToProps = (state) =>{
     recipes:state.getRecipes.recipes,
     isPending:state.getRecipes.isPending,
     error:state.getRecipes.error,
-    showPage:state.naviReducer.showPage
+    showPage:state.naviReducer.showPage,
+    singleId:state.naviReducer.singleId
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onRequestRecipes:() => getRecipes(dispatch),
-    onRouteChange:(route) => dispatch(naviAction(route))
+    onRouteChange:(route,id) => dispatch(naviAction(route,id))
   }
 }
 
@@ -48,14 +49,20 @@ class App extends Component {
           <section className={'container bordered-blue'} id={'content'}>
             <Featured recipe={featured}/>
           </section>
-          :(
+          :( showPage === 'single'
+             ?
              <section className={'container bordered-blue'} id={'content'}>
                 <Featured recipe={featured} onRouteChange={onRouteChange}/>
-                <Search />
-                <ListTriple recipes={recipes} onRouteChange={onRouteChange}/>
-                <ListDouble recipes={recipes} onRouteChange={onRouteChange}/>
                 <ListOne recipes={recipes} onRouteChange={onRouteChange}/>
-              </section>)
+              </section>
+                 :<section className={'container bordered-blue'} id={'content'}>
+                   <Featured recipe={featured} onRouteChange={onRouteChange}/>
+                   <Search />
+                   <ListTriple recipes={recipes} onRouteChange={onRouteChange}/>
+                   <ListDouble recipes={recipes} onRouteChange={onRouteChange}/>
+                   <ListOne recipes={recipes} onRouteChange={onRouteChange}/>
+                 </section>
+             )
         }
         <Footer/>
       </div>

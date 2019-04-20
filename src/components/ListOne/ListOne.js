@@ -1,8 +1,8 @@
 import React from 'react';
 import CardLarge from "../CardLarge/CardLarge";
 
-const ListOne = ({recipes}) => {
-    console.log(Math.random())
+const ListOne = (props) => {
+    const {recipes,...other} = props;
     return (
         <div className="row bordered">
             <div className={'col s12 m12 l12 xl12'}>
@@ -18,6 +18,7 @@ const ListOne = ({recipes}) => {
                                 <CardLarge
                                     key={key}
                                     recipe={recipe}
+                                    {...other}
                                 />
                             )
                         }

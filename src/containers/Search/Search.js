@@ -12,12 +12,10 @@ class Search extends React.Component {
 
     componentDidMount() {
         this.setState(initialState)
-        console.log(this.state)
     }
 
     /*a debugging console logging*/
     componentDidUpdate() {
-        console.log(this.state)
     }
 
     render() {

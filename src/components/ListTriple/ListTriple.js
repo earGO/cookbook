@@ -1,7 +1,8 @@
 import React from 'react';
 import CardSmall from "../CardSmall/CardSmall";
 
-const ListTriple =  ({recipes}) => {
+const ListTriple =  (props) => {
+    const {recipes,...other} = props;
         return (
             <div className="row bordered">
                 <div className={'col s12 m12 l12 xl12'}>
@@ -17,6 +18,7 @@ const ListTriple =  ({recipes}) => {
                                     <CardSmall
                                         key={key}
                                         recipe={recipe}
+                                        {...other}
                                     />
                                 )
                             }

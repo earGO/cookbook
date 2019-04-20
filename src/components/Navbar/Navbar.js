@@ -13,6 +13,7 @@ class Navbar extends React.Component {
     }
 
     render(){
+        const {onRouteChange,...other} = this.props;
         return (
             <section>
                 <div className="navbar-fixed">
@@ -23,9 +24,9 @@ class Navbar extends React.Component {
                                 className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down">
                                 <li className={'link'}
-                                    onClick={()=>this.props.onRouteChange('notindex')}>Sass</li>
+                                    onClick={()=>onRouteChange('notindex')}>Sass</li>
                                 <li
-                                    onClick={()=>this.props.onRouteChange('index')}>Components</li>
+                                    onClick={()=>onRouteChange('index')}>Components</li>
                                 <li><a href="collapsible.html">Javascript</a></li>
                                 <li><a href="mobile.html">Mobile</a></li>
                             </ul>

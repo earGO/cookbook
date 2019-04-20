@@ -20,13 +20,14 @@ export const getRecipes = (state=initialRecipes,action={})=>{
 }
 
 const initialShow = {
-    showPage:'index'
+    showPage:'index',
+    singleId:''
 };
 
 export const naviReducer = (state=initialShow,action={})=> {
     switch(action.type){
         case CONSTANTS.SHOW_PAGE:
-            return {...state,showPage:action.payload};
+            return {...state,showPage:action.payload.route,singleId:action.payload.id};
         default:
             return state;
     }

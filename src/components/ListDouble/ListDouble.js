@@ -1,7 +1,8 @@
 import React from 'react';
 import CardDouble from "../CardDouble/CardDouble";
 
-const ListDouble = ({recipes}) => {
+const ListDouble = (props) => {
+    const {recipes,...other} = props;
     return (
         <div className="row bordered">
             <div className={'col s12 m12 l12 xl12'}>
@@ -17,6 +18,7 @@ const ListDouble = ({recipes}) => {
                                 <CardDouble
                                     key={key}
                                     recipe={recipe}
+                                    {...other}
                                 />
                             )
                         }
