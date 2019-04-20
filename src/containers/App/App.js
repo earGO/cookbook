@@ -10,66 +10,51 @@ import ListTriple from "../../components//ListTriple/ListTriple";
 import Search from "../Search/Search";
 
 import { connect } from 'react-redux';
-import { getRecipes } from "./actions";
+import { getRecipes,naviAction } from "./actions";
 
 
 const mapStateToProps = (state) =>{
   return {
-    recipes:state.recipes
+    recipes:state.getRecipes.recipes,
+    isPending:state.getRecipes.isPending,
+    error:state.getRecipes.error,
+    showPage:state.naviReducer.showPage
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onRequestRecipes:() => getRecipes(dispatch)
-
+    onRequestRecipes:() => getRecipes(dispatch),
+    onRouteChange:(route) => dispatch(naviAction(route))
   }
 }
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    this.state={
-      showPage:'index'
-    }
-  }
 
   componentDidMount = () => {
     this.props.onRequestRecipes();
     console.log('monted app')
   };
 
-  onRouteChange = (route)=>{
-    if(route=='index'){
-      this.setState({
-        showPage:'index'
-      })
-    } else {
-      this.setState({
-        showPage:'notindex'
-      })
-    }
-  }
-
   render() {
-    const {recipes}=this.props,
+    const {recipes,showPage,error,isPending,onRouteChange}=this.props,
           featured=recipes[0];
     return (
       <div className="App">
-        <Navbar onRouteChange={this.onRouteChange}/>
+        <Navbar onRouteChange={onRouteChange}/>
         {
-         this.state.showPage ==='index'
+         showPage ==='index'
         ?
           <section className={'container bordered-blue'} id={'content'}>
             <Featured recipe={featured}/>
           </section>
           :(
              <section className={'container bordered-blue'} id={'content'}>
-                <Featured recipe={featured}/>
+                <Featured recipe={featured} onRouteChange={onRouteChange}/>
                 <Search />
-                <ListTriple recipes={recipes} onRouteChange={this.onRouteChange}/>
-                <ListDouble recipes={recipes} onRouteChange={this.onRouteChange}/>
-                <ListOne recipes={recipes} onRouteChange={this.onRouteChange}/>
+                <ListTriple recipes={recipes} onRouteChange={onRouteChange}/>
+                <ListDouble recipes={recipes} onRouteChange={onRouteChange}/>
+                <ListOne recipes={recipes} onRouteChange={onRouteChange}/>
               </section>)
         }
         <Footer/>

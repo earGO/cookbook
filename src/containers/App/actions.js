@@ -29,4 +29,7 @@ export const getRecipes = async (dispatch)=>{
     }
 }
 
-
+export const naviAction = (route) => ({
+    type:CONSTANTS.SHOW_PAGE,
+    payload:route
+})

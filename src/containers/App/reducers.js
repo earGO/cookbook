@@ -23,13 +23,11 @@ const initialShow = {
     showPage:'index'
 };
 
-export const showPage = (state=initialShow,action={})=> {
+export const naviReducer = (state=initialShow,action={})=> {
     switch(action.type){
         case CONSTANTS.SHOW_PAGE:
             return {...state,showPage:action.payload};
-            break;
         default:
             return state;
-            break;
     }
 }
