@@ -18,3 +18,18 @@ export const getRecipes = (state=initialRecipes,action={})=>{
             return state
     }
 }
+
+const initialShow = {
+    showPage:'index'
+};
+
+export const showPage = (state=initialShow,action={})=> {
+    switch(action.type){
+        case CONSTANTS.SHOW_PAGE:
+            return {...state,showPage:action.payload};
+            break;
+        default:
+            return state;
+            break;
+    }
+}

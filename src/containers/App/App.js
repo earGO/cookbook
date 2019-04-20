@@ -15,36 +15,63 @@ import { getRecipes } from "./actions";
 
 const mapStateToProps = (state) =>{
   return {
-    recipes:state.recipes,
+    recipes:state.recipes
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onRequestRecipes:() => getRecipes(dispatch)
+
   }
 }
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      showPage:'index'
+    }
+  }
 
   componentDidMount = () => {
     this.props.onRequestRecipes();
     console.log('monted app')
   };
 
+  onRouteChange = (route)=>{
+    if(route=='index'){
+      this.setState({
+        showPage:'index'
+      })
+    } else {
+      this.setState({
+        showPage:'notindex'
+      })
+    }
+  }
+
   render() {
     const {recipes}=this.props,
           featured=recipes[0];
     return (
       <div className="App">
-        <Navbar />
-        <section className={'container bordered-blue'} id={'content'}>
-          <Featured recipe={featured}/>
-          <Search />
-          <ListTriple recipes={recipes}/>
-          <ListDouble recipes={recipes}/>
-          <ListOne recipes={recipes}/>
-        </section>
+        <Navbar onRouteChange={this.onRouteChange}/>
+        {
+         this.state.showPage ==='index'
+        ?
+          <section className={'container bordered-blue'} id={'content'}>
+            <Featured recipe={featured}/>
+          </section>
+          :(
+             <section className={'container bordered-blue'} id={'content'}>
+                <Featured recipe={featured}/>
+                <Search />
+                <ListTriple recipes={recipes} onRouteChange={this.onRouteChange}/>
+                <ListDouble recipes={recipes} onRouteChange={this.onRouteChange}/>
+                <ListOne recipes={recipes} onRouteChange={this.onRouteChange}/>
+              </section>)
+        }
         <Footer/>
       </div>
     );
