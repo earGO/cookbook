@@ -33,3 +33,21 @@ export const naviAction = (route,id) => ({
     type:CONSTANTS.SHOW_PAGE,
     payload:{route:route,id:id}
 })
+
+
+export const userAction = (user) => ({
+    type:CONSTANTS.USER,
+    payload:user
+})
+
+export const todosAction = (todos) => ({
+    type:CONSTANTS.TODOS,
+    payload:todos
+})
+
+export const remindersAction = (reminders) => ({
+    type:CONSTANTS.TODOS,
+    payload:reminders
+})
+
+

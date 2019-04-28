@@ -10,7 +10,7 @@ const Featured = ({recipe}) => {
                         <div className={'col s6 m6 l6'} id={'featured-picture'}>
                             <img className={'featured'} src={`${recipe.strMealThumb}`} alt={''}/>
                         </div>
-                        <div className={' featured valign-wrapper center-align bordered-blue'}>
+                        <div className={'featured valign-wrapper center-align bordered-blue'}>
                             <div className={'col s12 m12 l12 bordered'} id={'featured-text'}>
                                 <h3>Some good story title</h3>
                                 <h5>Because people like stories</h5>
