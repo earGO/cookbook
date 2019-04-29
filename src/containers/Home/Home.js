@@ -21,7 +21,7 @@ class Home extends React.Component {
             <section className={'container row bordered center-align'}>
                 <div className="col s1 m2 l2"></div>
                 <article className={'col s10 m8 l8 bordered'}>
-                    <p>Hello, {user.userName}! Let's start your day!</p>
+                    <p>Hello, {user.name}! Let's start your day!</p>
                     {
                         typesOfCards.map((card,key)=>{
                             if(card === 'meal'){

@@ -9,7 +9,7 @@ import 'materialize-css';
 import 'material-icons';
 import App from "./containers/App/App";
 import { getRecipes, naviReducer,userReduser,todosReduser,remindersReduser } from "./containers/App/reducers";
-import {getOneRecipe} from "./containers/Recipe/reducers";
+import { getOneRecipe } from "./containers/Recipe/reducers";
 
 const rootReducer = combineReducers({getRecipes,naviReducer,userReduser,todosReduser,remindersReduser,getOneRecipe});
 

@@ -3,18 +3,17 @@ import React from 'react';
 const SuggestionCard = (props) => {
     const {info,card,onRouteChange} = props;
     if(card==='meal'){
-        console.log(info)
         return (
             <div className="col l12 s12 m12 valign-wrapper center-align bordered-blue">
                 <div className="card hoverable"
-                     onClick={()=>onRouteChange('recipe',info.idMeal)}
+                     onClick={()=>onRouteChange('recipe',`${info._id}`)}
                 >
                     <div className="card-image">
-                        <img src=""/>
+                        <img src="" alt={''}/>
                         <span className="card-title">Breakfast!</span>
                     </div>
                     <div className="card-content">
-                        <p>Today's breakfast is <strong>{info.strMeal}</strong>. Let's start cooking!</p>
+                        <p>Today's breakfast is <strong>{info.mealName}</strong>. Let's start cooking!</p>
                     </div>
                 </div>
             </div>
@@ -26,7 +25,7 @@ const SuggestionCard = (props) => {
                      onClick={()=>onRouteChange('todos')}
                 >
                     <div className="card-image">
-                        <img src=""/>
+                        <img src=""  alt={''}/>
                         <span className="card-title">Card Title</span>
                     </div>
                     <div className="card-content">
@@ -42,9 +41,11 @@ const SuggestionCard = (props) => {
                      onClick={()=>onRouteChange('reminders')}
                 >
                     <div className="card-image">
-                        <img src=""/>
+                        <img src=""  alt={''}/>
                         <span className="card-title">Card Title</span>
-                        <a className="btn-floating halfway-fab waves-effect waves-light red"><i
+                        <a className="btn-floating halfway-fab waves-effect waves-light red"
+                           href={'/'}
+                        ><i
                             className="material-icons">add_shopping_cart</i></a>
                     </div>
                     <div className="card-content">

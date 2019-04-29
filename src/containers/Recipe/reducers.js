@@ -1,19 +1,19 @@
 import * as CONSTANTS from "./constants";
 
 const initialRecipe = {
-    recipe:{},
-    isPending:false,
-    error: ''
+    singleRecipe:{},
+    singleRecipePending:false,
+    singleRecipeError: ''
 }
 
 export const getOneRecipe = (state=initialRecipe,action={})=>{
     switch (action.type) {
         case CONSTANTS.RECIPE_REQUEST_PENDING:
-            return {...state,isPending:true}
+            return {...state,singleRecipePending:true}
         case CONSTANTS.RECIPE_REQUEST_SUCCESS:
-            return {...state,recipes:action.payload,isPending:false}
+            return {...state,singleRecipe:action.payload,singleRecipePending:false}
         case CONSTANTS.RECIPE_REQUEST_FAILED:
-            return {...state,error:action.payload,isPending:false}
+            return {...state,singleRecipeError:action.payload,singleRecipePending:false}
         default:
             return state
     }

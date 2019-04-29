@@ -6,7 +6,10 @@ export const RECIPE_REQUEST_FAILED = 'RECIPE_REQUEST_FAILED';
 export const SHOW_PAGE = 'SHOW_PAGE';
 
 /*User constants*/
-export const USER = 'USER';
+export const USER_REQUEST_PENDING = 'USER_REQUEST_PENDING';
+export const USER_REQUEST_SUCCESS = 'USER_REQUEST_SUCCESS';
+export const USER_REQUEST_FAILED = 'USER_REQUEST_FAILED';
+
 
 /*ToDos constants*/
 export const TODOS = 'TODOS';

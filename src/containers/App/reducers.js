@@ -2,7 +2,7 @@ import * as CONSTANTS from './constants';
 
 const initialRecipes = {
     recipes:[],
-    isPending:false,
+    recipesPending:false,
     error: ''
 }
 
@@ -11,9 +11,9 @@ export const getRecipes = (state=initialRecipes,action={})=>{
         case CONSTANTS.RECIPE_REQUEST_PENDING:
             return {...state,isPending:true}
         case CONSTANTS.RECIPE_REQUEST_SUCCESS:
-            return {...state,recipes:action.payload,isPending:false}
+            return {...state,recipes:action.payload,recipesPending:false}
         case CONSTANTS.RECIPE_REQUEST_FAILED:
-            return {...state,error:action.payload,isPending:false}
+            return {...state,error:action.payload,recipesPending:false}
         default:
             return state
     }
@@ -34,16 +34,21 @@ export const naviReducer = (state=initialShow,action={})=> {
 }
 
 const initialUser = {
-    user:{
-        userName:'Barney',
-        userId:'mr.Awesome'
-    }
+    user:{},
+    userIsPending:false,
+    userError: ''
 };
 
 export const userReduser = (state=initialUser,action={})=> {
     switch(action.type){
-        case CONSTANTS.USER:
-            return {...state,user:action.payload};
+        case CONSTANTS.USER_REQUEST_PENDING:
+            return {...state,userIsPending:true};
+        case CONSTANTS.USER_REQUEST_SUCCESS:
+            return {...state,user:action.payload,userIsPending:false};
+        case CONSTANTS.USER_REQUEST_FAILED:
+            return {...state,userError:action.payload,userIsPending:false};
+
+
         default:
             return state;
     }

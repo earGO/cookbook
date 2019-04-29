@@ -5,12 +5,13 @@ export const getOneRecipe = async (mealId,dispatch)=>{
         type:CONSTANTS.RECIPE_REQUEST_PENDING
     })
     try{
-        let url='https://www.themealdb.com/api/json/v1/1/lookup.php?i='+ mealId;
+        let url='http://localhost:5010/recipes/'+ mealId;
+        console.log(url)
         const promised = await fetch(url);
         const response =  await promised.json();
         const data = await response;
-        const recipe = data.meals[0];
-
+        console.log(data)
+        const recipe = data;
         dispatch({
             type:CONSTANTS.RECIPE_REQUEST_SUCCESS,
             payload: recipe

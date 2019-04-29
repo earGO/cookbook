@@ -8,10 +8,6 @@ class Login extends React.Component {
             <div>
                 <button className={'button'}
                 onClick={()=>{
-                    this.props.onLogin({
-                        userName:'Barney',
-                        userId:'mrAwesome'
-                    });
                     this.props.onRouteChange('home')
                 }}>
                     Log In
