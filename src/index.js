@@ -8,10 +8,10 @@ import * as serviceWorker from './serviceWorker';
 import 'materialize-css';
 import 'material-icons';
 import App from "./containers/App/App";
-import { getRecipes, naviReducer,userReduser,todosReduser,remindersReduser } from "./containers/App/reducers";
-import { getOneRecipe } from "./containers/Recipe/reducers";
+import { naviReducer,userReduser,todosReduser,remindersReduser } from "./containers/App/reducers";
+import { getOneRecipe,getCurrentRecipe } from "./containers/Recipe/reducers";
 
-const rootReducer = combineReducers({getRecipes,naviReducer,userReduser,todosReduser,remindersReduser,getOneRecipe});
+const rootReducer = combineReducers({naviReducer,userReduser,todosReduser,remindersReduser,getOneRecipe,getCurrentRecipe});
 
 const store = createStore(rootReducer,applyMiddleware(thunkMiddleware))
 

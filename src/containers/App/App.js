@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { connect } from 'react-redux';
-import { getRecipes,naviAction,getUser,todosAction,remindersAction } from "./actions";
+import { naviAction,getUser,todosAction,remindersAction } from "./actions";
+import { getCurrentRecipe } from "../Recipe/actions";
 
 import Navbar from "../../components//Navbar/Navbar";
 import Footer from "../../components//Footer/Footer";
@@ -25,23 +26,29 @@ import Banquett from "../Banquett/Banquett";
 
 const mapStateToProps = (state) =>{
   return {
-    recipes:state.getRecipes.recipes,
-    recipesPending:state.getRecipes.recipesPending,
+    /*current recipe for a Home dashboard*/
+    currentRecipe:state.getCurrentRecipe.currentRecipe,
+    currentRecipePending:state.getCurrentRecipe.currentRecipePending,
+    /*navigation*/
     showPage:state.naviReducer.showPage,
+    /*single recipe ID for a recipe display*/
     singleId:state.naviReducer.singleId,
+    /*logged in user*/
       user:state.userReduser.user,
     userIsPending:state.userReduser.userIsPending,
     userError: state.userReduser.userError,
+    /*todos*/
       todos:state.todosReduser.todos,
+    /*reminders*/
     reminders:state.remindersReduser.reminders,
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onRequestRecipes:() => getRecipes(dispatch),
-    onRouteChange:(route,id) => dispatch(naviAction(route,id)),
-      onLogin:() => getUser(dispatch),
+    onRequestRecipe:(id) => getCurrentRecipe(id,dispatch), //the current recipe for a Home dashboard
+    onRouteChange:(route,id) => dispatch(naviAction(route,id)), //the router for an app
+      onLogin:() => getUser(dispatch), //User fetcher
       onRequestTodos:(todos) => dispatch(todosAction(todos)),
     onRequestReminders:(reminders) => dispatch(remindersAction(reminders))
   }
@@ -51,24 +58,23 @@ class App extends Component {
 
   componentDidMount = async () => {
     await this.props.onLogin();
-    await this.props.onRequestRecipes();
+    await this.props.onRequestRecipe('5cc724bd77767702e3f87c0a');
     await this.props.onRequestTodos(['Put fish out of freezer to fridge','Put beans into water','Fill steamer with water','Something else']);
     await this.props.onRequestReminders(['Go buy some food','Dinner with Robin at 19 p.m. at hers']);
     console.log('monted app')
   };
 
   render() {
-    const {recipes,showPage,singleId,user,todos,reminders,recipesPending,userIsPending,
+    const {currentRecipe,showPage,singleId,user,todos,reminders,currentRecipePending,userIsPending,
             onRouteChange
-    }=this.props,
-          featured=recipes[0];
-    if(!recipesPending&&!userIsPending) {
+    }=this.props;
+    if(!currentRecipePending&&!userIsPending) {
     return (
       <div className="App">
         <Navbar onRouteChange={onRouteChange}/>
         {
           showPage === 'home'
-              ? <Home user={user} recipe={featured} todos={todos} reminders={reminders} onRouteChange={onRouteChange}/>
+              ? <Home user={user} recipe={currentRecipe} todos={todos} reminders={reminders} onRouteChange={onRouteChange}/>
               : (showPage === 'login'
                   ? <Login onRouteChange={onRouteChange}/>
                   : (showPage === 'recipes'
