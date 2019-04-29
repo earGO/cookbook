@@ -1,4 +1,7 @@
 import React from 'react';
+import ReminderList from "../../components/ReminderList/ReminderList";
+import ReminderMenu from "../../components/ReminderMenu/ReminderMenu";
+import ReminderIntro from "../../components/ReminderIntro/ReminderIntro";
 
 
 const initialState = {}
@@ -23,7 +26,9 @@ class Reminders extends React.Component {
     render() {
         return (
             <div>
-                <p>The Reminders smart component</p>
+                <ReminderIntro/>
+                <ReminderMenu/>
+                <ReminderList/>
             </div>
 
         )

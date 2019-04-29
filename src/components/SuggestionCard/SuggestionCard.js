@@ -5,11 +5,11 @@ const SuggestionCard = (props) => {
     if(card==='meal'){
         return (
             <div className="col l12 s12 m12 valign-wrapper center-align bordered-blue">
-                <div className="card hoverable"
+                <div className="card small hoverable"
                      onClick={()=>onRouteChange('recipe',`${info._id}`)}
                 >
                     <div className="card-image">
-                        <img src="" alt={''}/>
+                        <img src={info.image} alt={''}/>
                         <span className="card-title">Breakfast!</span>
                     </div>
                     <div className="card-content">

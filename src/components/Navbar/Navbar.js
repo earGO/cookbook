@@ -109,7 +109,6 @@ class Navbar extends React.Component {
                     <li
                         onClick={()=>onRouteChange('groceries')}>
                         <a className={'grey-text text-darken-4'}
-                           href={'/'}
                         >Groceries</a>
                     </li>
                     <li
