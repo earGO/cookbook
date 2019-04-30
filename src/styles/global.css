@@ -1,0 +1,43 @@
+/*proportional */
+/*basic size for margin and padding*/
+/*margins*/
+/*allround*/
+.m0 {
+  margin: 0;
+}
+
+.m5 {
+  margin: 0.25vw;
+}
+
+.m10 {
+  margin: 0.5vw;
+}
+
+.m15 {
+  margin: 0.75vw;
+}
+
+/*symmetrical horizontal*/
+.mh5 {
+  margin-left: 0.25vw;
+  margin-right: 0.25vw;
+}
+
+.mh10 {
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
+
+/*padding*/
+.ph10 {
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+}
+
+.top-nav-link:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+/*# sourceMappingURL=global.css.map */

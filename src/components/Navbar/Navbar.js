@@ -1,6 +1,7 @@
 import React from 'react';
 import M from "materialize-css/dist/js/materialize.min.js";
 import "materialize-css/dist/css/materialize.min.css";
+import '../../styles/global.scss';
 
 class Navbar extends React.Component {
 
@@ -22,59 +23,50 @@ class Navbar extends React.Component {
                             <a href="/" data-target="mobile-demo" className={"sidenav-trigger"}><i
                                 className="material-icons grey-text text-darken-4">menu</i></a>
                             <ul className="hide-on-med-and-down">
-                                <li className={'link'}
+                                <li  className={'top-nav-link ph10'}
                                     onClick={()=>onRouteChange('home')}>
-                                    <div><a className={'grey-text text-darken-4'}
-                                            href={'/'}
-                                    >HOME</a></div>
+                                    <div className={'grey-text text-darken-4'}
+                                    >HOME</div>
                                 </li>
-                                <li className={'link'}
+                                <li  className={'top-nav-link ph10'}
                                     onClick={()=>onRouteChange('recipes')}>
-                                    <div><a className={'grey-text text-darken-4'}
-                                            href={'/'}
-                                    >Recipes</a></div>
+                                    <div className={'grey-text text-darken-4'}
+                                    >Recipes</div>
                                 </li>
-                                <li
+                                <li className={'top-nav-link ph10'}
                                     onClick={()=>onRouteChange('todos')}>
-                                    <a className={'grey-text text-darken-4'}
-                                       href={'/'}
-                                    >ToDos</a>
+                                    <div className={'grey-text text-darken-4'}
+                                    >ToDos</div>
                                 </li>
-                                <li
+                                <li className={'top-nav-link ph10'}
                                     onClick={()=>onRouteChange('surprise')}>
-                                    <a className={'grey-text text-darken-4'}
-                                       href={'/'}
-                                    >Surpise Me</a>
+                                    <div className={'grey-text text-darken-4'}
+                                    >Surpise Me</div>
                                 </li>
-                                <li
+                                <li className={'top-nav-link ph10'}
                                     onClick={()=>onRouteChange('groceries')}>
-                                    <a className={'grey-text text-darken-4'}
-                                       href={'/'}
-                                    >Groceries</a>
+                                    <div className={'grey-text text-darken-4 mh10 ph10'}
+                                    >Groceries</div>
                                 </li>
-                                <li
+                                <li className={'top-nav-link ph10'}
                                     onClick={()=>onRouteChange('settings')}>
-                                    <a className={'grey-text text-darken-4'}
-                                       href={'/'}
-                                    >Settings</a>
+                                    <div className={'grey-text text-darken-4'}
+                                    >Settings</div>
                                 </li>
-                                <li
+                                <li className={'top-nav-link ph10'}
                                     onClick={()=>onRouteChange('stats')}>
-                                    <a className={'grey-text text-darken-4'}
-                                       href={'/'}
-                                    >Stats</a>
+                                    <div className={'grey-text text-darken-4'}
+                                    >Stats</div>
                                 </li>
-                                <li
+                                <li className={'top-nav-link ph10'}
                                     onClick={()=>onRouteChange('search')}>
-                                    <a className={'grey-text text-darken-4'}
-                                       href={'/'}
-                                    >Search</a>
+                                    <div className={'grey-text text-darken-4'}
+                                    >Search</div>
                                 </li>
-                                <li
+                                <li className={'top-nav-link ph10'}
                                     onClick={()=>onRouteChange('login')}>
-                                    <a className={'grey-text text-darken-4'}
-                                       href={'/'}
-                                    >LogIn</a>
+                                    <div className={'grey-text text-darken-4'}
+                                    >LogIn</div>
                                 </li>
                             </ul>
                         </div>
@@ -82,58 +74,50 @@ class Navbar extends React.Component {
                 </div>
 
                 <ul className={"sidenav"} id="mobile-demo">
-                    <li className={'link'}
-                        onClick={()=>onRouteChange('home')}>
-                        <div><a className={'grey-text text-darken-4'}
-                                href={'/'}
-                        >HOME</a></div>
+                    <li  className={'top-nav-link ph10'}
+                         onClick={()=>onRouteChange('home')}>
+                        <div className={'grey-text text-darken-4'}
+                        >HOME</div>
                     </li>
-                    <li className={'link'}
-                        onClick={()=>onRouteChange('recipes')}>
-                        <div><a className={'grey-text text-darken-4'}
-                                href={'/'}
-                        >Recipes</a></div>
+                    <li  className={'top-nav-link ph10'}
+                         onClick={()=>onRouteChange('recipes')}>
+                        <div className={'grey-text text-darken-4'}
+                        >Recipes</div>
                     </li>
-                    <li
+                    <li className={'top-nav-link ph10'}
                         onClick={()=>onRouteChange('todos')}>
-                        <a className={'grey-text text-darken-4'}
-                           href={'/'}
-                        >ToDos</a>
+                        <div className={'grey-text text-darken-4'}
+                        >ToDos</div>
                     </li>
-                    <li
+                    <li className={'top-nav-link ph10'}
                         onClick={()=>onRouteChange('surprise')}>
-                        <a className={'grey-text text-darken-4'}
-                           href={'/'}
-                        >Surpise Me</a>
+                        <div className={'grey-text text-darken-4'}
+                        >Surpise Me</div>
                     </li>
-                    <li
+                    <li className={'top-nav-link ph10'}
                         onClick={()=>onRouteChange('groceries')}>
-                        <a className={'grey-text text-darken-4'}
-                        >Groceries</a>
+                        <div className={'grey-text text-darken-4 mh10 ph10'}
+                        >Groceries</div>
                     </li>
-                    <li
+                    <li className={'top-nav-link ph10'}
                         onClick={()=>onRouteChange('settings')}>
-                        <a className={'grey-text text-darken-4'}
-                           href={'/'}
-                        >Settings</a>
+                        <div className={'grey-text text-darken-4'}
+                        >Settings</div>
                     </li>
-                    <li
+                    <li className={'top-nav-link ph10'}
                         onClick={()=>onRouteChange('stats')}>
-                        <a className={'grey-text text-darken-4'}
-                           href={'/'}
-                        >Stats</a>
+                        <div className={'grey-text text-darken-4'}
+                        >Stats</div>
                     </li>
-                    <li
+                    <li className={'top-nav-link ph10'}
                         onClick={()=>onRouteChange('search')}>
-                        <a className={'grey-text text-darken-4'}
-                           href={'/'}
-                        >Search</a>
+                        <div className={'grey-text text-darken-4'}
+                        >Search</div>
                     </li>
-                    <li
+                    <li className={'top-nav-link ph10'}
                         onClick={()=>onRouteChange('login')}>
-                        <a className={'grey-text text-darken-4'}
-                           href={'/'}
-                        >LogIn</a>
+                        <div className={'grey-text text-darken-4'}
+                        >LogIn</div>
                     </li>
                 </ul>
             </section>
