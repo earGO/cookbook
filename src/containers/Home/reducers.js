@@ -1,7 +1,7 @@
 import * as CONSTANTS from './constants';
 
 const initialDay = {
-    actualDay:[],
+    actualDay:{},
     dayIsPending:false,
     error: ''
 };

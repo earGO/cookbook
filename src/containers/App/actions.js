@@ -1,11 +1,17 @@
 import * as CONSTANTS from './constants';
 
+import * as keys from '../../config/keys';
+
+const
+    BACKEND_URI = keys.BACKEND_URI;
+
+
 export const getRecipes = async (dispatch) => {
     dispatch({
         type:CONSTANTS.RECIPE_REQUEST_PENDING
     });
     try{
-        const promised = await fetch('http://localhost:5010/recipes/all');
+        const promised = await fetch(BACKEND_URI+'recipes/all');
         const response =  promised.json();
         const recipeData =  await response;
         dispatch({
@@ -31,7 +37,7 @@ export const getUser = async (dispatch) => {
         type:CONSTANTS.USER_REQUEST_PENDING
     });
     try{
-        const promised = await fetch('http://localhost:5010/auth');
+        const promised = await fetch(BACKEND_URI+'auth');
         const response =  promised.json();
         const userData =  await response;
         dispatch({

@@ -83,7 +83,7 @@ class App extends Component {
         {showPage === 'login'
             ? <Login onRouteChange={onRouteChange}/>
               : ( showPage === 'home'
-                    ? <Home user={user} onRouteChange={onRouteChange} backendUrl={BACKEND_URI} date={TODAY}/>
+                    ? <Home user={user} date={TODAY}/>
                   : (showPage === 'recipes'
                           ? <Recipes/>
                           : (showPage === 'recipe'

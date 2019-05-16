@@ -1,14 +1,19 @@
 import * as CONSTANTS from "./constants";
 
+import * as keys from '../../config/keys';
+
+const
+    BACKEND_URI = keys.BACKEND_URI;
+
 export const getOneRecipe = async (mealId,dispatch)=>{
     dispatch({
         type:CONSTANTS.RECIPE_REQUEST_PENDING
     })
     try{
-        let url='http://localhost:5010/recipes/'+ mealId;
+        let url=BACKEND_URI + mealId;
         console.log(url)
         const promised = await fetch(url);
-        const response =  await promised.json();
+        const response =  await Promise.resolve(promised);
         const data = await response;
         console.log(data)
         const recipe = data;
