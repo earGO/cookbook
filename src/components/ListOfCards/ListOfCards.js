@@ -1,16 +1,45 @@
 import React from 'react';
 
-import {isCooked} from "../../helpers/arrayFunctions";
+import {isCooked,isActive} from "../../helpers/arrayFunctions";
+import DashboardCardWrapper from "../DashboardCardWrapper/DashboardCardWrapper";
+import DashboardMealCard from "../DashboardMealCard/DashboardMealCard";
+import DashboardTodosCard from "../DashboardTodosCard/DashboardTodosCard";
+import DashboardGroceriesCard from "../DashboardGroceriesCard/DashboardGroceriesCard";
 
 const ListOfCards = (props) => {
-    if(props.meals) {
+    if(props.meals&&props.todos) {
         if(props.meals.length){
-            console.log(props.meals.find(isCooked))
-            return (
-                <div>
-                    <p>This is a ListOfCards dumb React Component</p>
-                </div>
-            )
+            const MEAL = props.meals.find(isCooked);
+            const TODOS = props.todos;
+            console.log('todos array in ListOfCards component:\n',props.todos)
+            if(props.groceryDay){
+                const GROCERIES = props.groceries;
+                return (
+                    <section>
+                        <DashboardCardWrapper>
+                            <DashboardMealCard meal={MEAL}/>
+                        </DashboardCardWrapper>
+                        <DashboardCardWrapper>
+                            <DashboardTodosCard todos={TODOS}/>
+                        </DashboardCardWrapper>
+                        <DashboardCardWrapper>
+                            <DashboardGroceriesCard groceries={GROCERIES}/>
+                        </DashboardCardWrapper>
+                    </section>
+                )
+            } else {
+                return (
+                    <section>
+                        <DashboardCardWrapper>
+                            <DashboardMealCard meal={MEAL}/>
+                        </DashboardCardWrapper>
+                        <DashboardCardWrapper>
+                            <DashboardTodosCard todos={TODOS}/>
+                        </DashboardCardWrapper>
+                    </section>
+                )
+            }
+
         } else {
             return (
                 <div>
