@@ -2,7 +2,9 @@ import React from 'react';
 
 import {connect} from "react-redux";
 import { getActualDay } from "./actions";
-import ListOfCards from "../../components/ListOfCards";
+import ListOfCards from "../../components/ListOfCards/ListOfCards";
+
+import { isCooked } from "../../helpers/arrayFunctions";
 
 const mapStateToProps = (state) =>{
     return {
@@ -18,8 +20,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-
-
 class Home extends React.Component {
 
     componentDidMount() {
@@ -32,12 +32,14 @@ class Home extends React.Component {
         const actualDay = this.props.actualDay;
         const dayIsPending = this.props.dayIsPending;
         if(!dayIsPending){
+            const MEALS = actualDay.meals;
+            console.log(MEALS)
             return (
                 <section className={'container row bordered center-align'}>
                     <div className="col s1 m2 l2"></div>
                     <article className={'col s10 m8 l8 bordered'}>
                         <p>Hello, {user.name}! Let's start your day!</p>
-                        <ListOfCards actualDay={actualDay}/>
+                        <ListOfCards meals={MEALS}/>
                     </article>
                     <div className="col s1 m2 l2"></div>
                 </section>

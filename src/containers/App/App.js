@@ -77,9 +77,9 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar onRouteChange={onRouteChange}/>
-        /**
+        {/**
         * DASHBOARD home screen MUST be the first screen always
-        */
+        */}
         {showPage === 'login'
             ? <Login onRouteChange={onRouteChange}/>
               : ( showPage === 'home'

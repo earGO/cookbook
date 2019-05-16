@@ -11,11 +11,9 @@ export const getOneRecipe = async (mealId,dispatch)=>{
     })
     try{
         let url=BACKEND_URI + mealId;
-        console.log(url)
         const promised = await fetch(url);
         const response =  await Promise.resolve(promised);
         const data = await response;
-        console.log(data)
         const recipe = data;
         dispatch({
             type:CONSTANTS.RECIPE_REQUEST_SUCCESS,

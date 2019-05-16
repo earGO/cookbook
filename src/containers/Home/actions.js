@@ -15,10 +15,8 @@ export const getActualDay = async (date,dispatch) => {
         const url = urlConstructor(BACKEND_URI,'dashboard/',fetchDate);
         console.log('in actions for Home component fetching day at URL: ',url);
         const promised = fetch(url);
-        console.log(promised);
         const response = await Promise.resolve(promised);
         const data = await response.json();
-        console.log(data)
         const day = data;
         dispatch({
             type: CONSTANTS.ACTUAL_DAY_SUCCESS,
