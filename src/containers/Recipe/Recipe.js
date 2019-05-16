@@ -1,6 +1,8 @@
 import React from 'react';
+
 import {connect} from "react-redux";
-import {getOneRecipe} from "./actions";
+import { getOneRecipe } from "./actions";
+
 import VideoRecipe from "../../components/VideoRecipe/VideoRecipe";
 import RecipeMenu from "../../components/RecipeMenu/RecipeMenu";
 import RecipeInfo from "../../components/RecipeInfo/RecipeInfo";

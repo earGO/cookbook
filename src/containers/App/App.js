@@ -20,9 +20,14 @@ import Settings from "../Settings/Settings";
 import Search from "../Search/Search";
 import Banquett from "../Banquett/Banquett";
 
+import * as keys from '../../config/keys';
 
 /*Impoting in App component are the props and actions, needed to routing and passing ID's
 * to containers of a propper functionality*/
+
+const
+    BACKEND_URI = keys.BACKEND_URI,
+    TODAY = new Date();
 
 const mapStateToProps = (state) =>{
   return {
@@ -46,7 +51,7 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onRequestRecipe:(id) => getCurrentRecipe(id,dispatch), //the current recipe for a Home dashboard
+    onRequestRecipe:(id,backendUrl) => getCurrentRecipe(id,backendUrl,dispatch), //the current recipe for a Home dashboard
     onRouteChange:(route,id) => dispatch(naviAction(route,id)), //the router for an app
       onLogin:() => getUser(dispatch), //User fetcher
       onRequestTodos:(todos) => dispatch(todosAction(todos)),
@@ -58,7 +63,7 @@ class App extends Component {
 
   componentDidMount = async () => {
     await this.props.onLogin();
-    await this.props.onRequestRecipe('5cc724bd77767702e3f87c0a');
+    await this.props.onRequestRecipe('5cc724bd77767702e3f87c0a',BACKEND_URI);
     await this.props.onRequestTodos(['Put fish out of freezer to fridge','Put beans into water','Fill steamer with water','Something else']);
     await this.props.onRequestReminders(['Go buy some food','Dinner with Robin at 19 p.m. at hers']);
     console.log('monted app')
@@ -72,11 +77,13 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar onRouteChange={onRouteChange}/>
-        {
-          showPage === 'home'
-              ? <Home user={user} recipe={currentRecipe} todos={todos} reminders={reminders} onRouteChange={onRouteChange}/>
-              : (showPage === 'login'
-                  ? <Login onRouteChange={onRouteChange}/>
+        /**
+        * DASHBOARD home screen MUST be the first screen always
+        */
+        {showPage === 'login'
+            ? <Login onRouteChange={onRouteChange}/>
+              : ( showPage === 'home'
+                    ? <Home user={user} onRouteChange={onRouteChange} backendUrl={BACKEND_URI} date={TODAY}/>
                   : (showPage === 'recipes'
                           ? <Recipes/>
                           : (showPage === 'recipe'

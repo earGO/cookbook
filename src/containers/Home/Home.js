@@ -1,54 +1,39 @@
 import React from 'react';
-import SuggestionCard from "../../components/SuggestionCard/SuggestionCard";
 
+import {connect} from "react-redux";
+import { getActualDay } from "./actions";
 
-const initialState = {
-    typesOfCards:['meal','todos','reminders'],
-}
+const mapStateToProps = (state) =>{
+    return {
+        actualDay:state.getActualDayReducer.actualDay,
+        dayIsPending:state.getActualDayReducer.dayIsPending,
+        error:state.getActualDayReducer.error
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onRequestActualDay:(date,backendUrl) => getActualDay(date,backendUrl,dispatch)
+    }
+};
 
 
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = initialState;
+
+    componentDidMount() {
+        this.props.onRequestActualDay(this.props.date,this.props.BACKEND_URI)
     }
 
     render() {
-        const {user,recipe,todos,reminders,...other} = this.props;
-        const {typesOfCards} = this.state;
+        console.log('date in Home component be like ',this.props.date)
+        console.log(this.props)
+        const {user} = this.props;
         return (
             <section className={'container row bordered center-align'}>
                 <div className="col s1 m2 l2"></div>
                 <article className={'col s10 m8 l8 bordered'}>
                     <p>Hello, {user.name}! Let's start your day!</p>
-                    {
-                        typesOfCards.map((card,key)=>{
-                            if(card === 'meal'){
-                                return (<SuggestionCard
-                                    key={key}
-                                    info={recipe}
-                                    card={card}
-                                    {...other}
-                                />)
-                            } else if (card === 'todos') {
-                                return(<SuggestionCard
-                                        key={key}
-                                        info={todos}
-                                        card={card}
-                                        {...other}
-                                />)
-                            } else {
-                                return(<SuggestionCard
-                                    key={key}
-                                    card={card}
-                                    info={reminders}
-                                    {...other}
-                                />)
-                            }
-
-                        })
-                    }
 
                 </article>
                 <div className="col s1 m2 l2"></div>
@@ -58,4 +43,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

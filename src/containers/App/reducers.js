@@ -9,7 +9,7 @@ const initialRecipes = {
 export const getRecipes = (state=initialRecipes,action={})=>{
     switch (action.type) {
         case CONSTANTS.RECIPE_REQUEST_PENDING:
-            return {...state,isPending:true}
+            return {...state,recipesPending:true}
         case CONSTANTS.RECIPE_REQUEST_SUCCESS:
             return {...state,recipes:action.payload,recipesPending:false}
         case CONSTANTS.RECIPE_REQUEST_FAILED:

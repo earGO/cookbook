@@ -24,12 +24,12 @@ export const getOneRecipe = async (mealId,dispatch)=>{
     }
 }
 
-export const getCurrentRecipe = async (mealId,dispatch)=>{
+export const getCurrentRecipe = async (mealId,backendUrl,dispatch)=>{
     dispatch({
         type:CONSTANTS.CURRENT_RECIPE_REQUEST_PENDING
     })
     try{
-        let url='http://localhost:5010/recipes/current/'+ mealId;
+        let url=backendUrl+ mealId;
         console.log(url)
         const promised = await fetch(url);
         const response =  await promised.json();

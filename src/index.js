@@ -10,8 +10,9 @@ import 'material-icons';
 import App from "./containers/App/App";
 import { naviReducer,userReduser,todosReduser,remindersReduser } from "./containers/App/reducers";
 import { getOneRecipe,getCurrentRecipe } from "./containers/Recipe/reducers";
+import { getActualDayReducer } from "./containers/Home/reducers";
 
-const rootReducer = combineReducers({naviReducer,userReduser,todosReduser,remindersReduser,getOneRecipe,getCurrentRecipe});
+const rootReducer = combineReducers({naviReducer,userReduser,todosReduser,remindersReduser,getOneRecipe,getCurrentRecipe,getActualDayReducer});
 
 const store = createStore(rootReducer,applyMiddleware(thunkMiddleware))
 
