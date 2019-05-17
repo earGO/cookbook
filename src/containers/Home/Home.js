@@ -28,7 +28,8 @@ class Home extends React.Component {
     }
 
     render() {
-        const {user} = this.props;
+        const {user,
+                onRouteChange} = this.props;
         const actualDay = this.props.actualDay;
         const dayIsPending = this.props.dayIsPending;
         if(!dayIsPending){
@@ -41,7 +42,7 @@ class Home extends React.Component {
                     <div className="col s1 m2 l2"></div>
                     <article className={'col s10 m8 l8 bordered'}>
                         <p>Hello, {user.name}! Let's start your day!</p>
-                        <ListOfCards meals={MEALS} todos={TODOS} groceryDay={GROCERIEDAY} groceries={GROCERIES}/>
+                        <ListOfCards meals={MEALS} todos={TODOS} groceryDay={GROCERIEDAY} groceries={GROCERIES} onRouteChange={onRouteChange}/>
                     </article>
                     <div className="col s1 m2 l2"></div>
                 </section>

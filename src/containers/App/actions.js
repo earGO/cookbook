@@ -5,31 +5,10 @@ import * as keys from '../../config/keys';
 const
     BACKEND_URI = keys.BACKEND_URI;
 
-
-export const getRecipes = async (dispatch) => {
-    dispatch({
-        type:CONSTANTS.RECIPE_REQUEST_PENDING
-    });
-    try{
-        const promised = await fetch(BACKEND_URI+'recipes/all');
-        const response =  promised.json();
-        const recipeData =  await response;
-        dispatch({
-            type:CONSTANTS.RECIPE_REQUEST_SUCCESS,
-            payload: recipeData
-        })
-    } catch (error) {
-        dispatch({
-            type:CONSTANTS.RECIPE_REQUEST_FAILED,
-            payload: error
-        })
-    }
-};
-
 export const naviAction = (route,id) => ({
     type:CONSTANTS.SHOW_PAGE,
     payload:{route:route,id:id}
-})
+});
 
 
 export const getUser = async (dispatch) => {
@@ -55,11 +34,11 @@ export const getUser = async (dispatch) => {
 export const todosAction = (todos) => ({
     type:CONSTANTS.TODOS,
     payload:todos
-})
+});
 
 export const remindersAction = (reminders) => ({
     type:CONSTANTS.TODOS,
     payload:reminders
-})
+});
 
 

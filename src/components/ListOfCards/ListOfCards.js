@@ -7,6 +7,7 @@ import DashboardTodosCard from "../DashboardTodosCard/DashboardTodosCard";
 import DashboardGroceriesCard from "../DashboardGroceriesCard/DashboardGroceriesCard";
 
 const ListOfCards = (props) => {
+    const{ onRouteChange } = props;
     if(props.meals&&props.todos) {
         if(props.meals.length){
             const MEAL = props.meals.find(isCooked);
@@ -17,7 +18,7 @@ const ListOfCards = (props) => {
                 return (
                     <section>
                         <DashboardCardWrapper>
-                            <DashboardMealCard meal={MEAL}/>
+                            <DashboardMealCard meal={MEAL} onRouteChange={onRouteChange}/>
                         </DashboardCardWrapper>
                         <DashboardCardWrapper>
                             <DashboardTodosCard todos={TODOS}/>

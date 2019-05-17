@@ -1,24 +1,5 @@
 import * as CONSTANTS from './constants';
 
-const initialRecipes = {
-    recipes:[],
-    recipesPending:false,
-    error: ''
-}
-
-export const getRecipes = (state=initialRecipes,action={})=>{
-    switch (action.type) {
-        case CONSTANTS.RECIPE_REQUEST_PENDING:
-            return {...state,recipesPending:true}
-        case CONSTANTS.RECIPE_REQUEST_SUCCESS:
-            return {...state,recipes:action.payload,recipesPending:false}
-        case CONSTANTS.RECIPE_REQUEST_FAILED:
-            return {...state,error:action.payload,recipesPending:false}
-        default:
-            return state
-    }
-}
-
 const initialShow = {
     showPage:'login',
     singleId:''

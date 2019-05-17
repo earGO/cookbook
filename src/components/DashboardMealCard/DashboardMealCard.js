@@ -1,9 +1,11 @@
 import React from 'react';
 
 const DashboardMealCard = (props) => {
-    const { recipeName,recipeImage } = props.meal;
+    const { recipeName,recipeImage,recipeID } = props.meal;
+    const { onRouteChange } = props;
     return (
-        <section className="card small">
+        <section className="card small"
+        onClick={()=>onRouteChange('recipe',recipeID)}>
             <div className="card-image">
                 <img src={recipeImage} alt={''}/>
                 <span className="card-title">Breakfast!</span>
