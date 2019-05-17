@@ -1,11 +1,12 @@
 import React from 'react';
 
 const DashboardMealCard = (props) => {
+    console.log('props in DashBoardMealCard be like: ',props)
     const { recipeName,recipeImage,recipeID } = props.meal;
     const { onRouteChange } = props;
     return (
         <section className="card small"
-        onClick={()=>onRouteChange('recipe',recipeID)}>
+            onClick={()=>onRouteChange('recipe',recipeID)}>
             <div className="card-image">
                 <img src={recipeImage} alt={''}/>
                 <span className="card-title">Breakfast!</span>

@@ -6,25 +6,25 @@ import DashboardMealCard from "../DashboardMealCard/DashboardMealCard";
 import DashboardTodosCard from "../DashboardTodosCard/DashboardTodosCard";
 import DashboardGroceriesCard from "../DashboardGroceriesCard/DashboardGroceriesCard";
 
-const ListOfCards = (props) => {
-    const{ onRouteChange } = props;
-    if(props.meals&&props.todos) {
-        if(props.meals.length){
-            const MEAL = props.meals.find(isCooked);
-            const TODOS = props.todos;
+const DashboardCards = (props) => {
+    const{ meals,todos,groceryDay,groceries, ...other } = props;
+    if(meals&&todos) {
+        if(meals.length){
+            const MEAL = meals.find(isCooked);
+            const TODOS = todos;
             console.log('todos array in ListOfCards component:\n',props.todos)
-            if(props.groceryDay){
-                const GROCERIES = props.groceries;
+            if(groceryDay){
+                const GROCERIES = groceries;
                 return (
                     <section>
                         <DashboardCardWrapper>
-                            <DashboardMealCard meal={MEAL} onRouteChange={onRouteChange}/>
+                            <DashboardMealCard meal={MEAL} {...other}/>
                         </DashboardCardWrapper>
                         <DashboardCardWrapper>
-                            <DashboardTodosCard todos={TODOS}/>
+                            <DashboardTodosCard todos={TODOS} {...other}/>
                         </DashboardCardWrapper>
                         <DashboardCardWrapper>
-                            <DashboardGroceriesCard groceries={GROCERIES}/>
+                            <DashboardGroceriesCard groceries={GROCERIES} {...other}/>
                         </DashboardCardWrapper>
                     </section>
                 )
@@ -32,10 +32,10 @@ const ListOfCards = (props) => {
                 return (
                     <section>
                         <DashboardCardWrapper>
-                            <DashboardMealCard meal={MEAL}/>
+                            <DashboardMealCard meal={MEAL} {...other}/>
                         </DashboardCardWrapper>
                         <DashboardCardWrapper>
-                            <DashboardTodosCard todos={TODOS}/>
+                            <DashboardTodosCard todos={TODOS} {...other}/>
                         </DashboardCardWrapper>
                     </section>
                 )
@@ -59,4 +59,4 @@ const ListOfCards = (props) => {
 
 };
 
-export default ListOfCards;
+export default DashboardCards;

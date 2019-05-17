@@ -18,8 +18,10 @@ import Surprise from "../Surprise/Surprise";
 import Settings from "../Settings/Settings";
 import Search from "../Search/Search";
 import Banquett from "../Banquett/Banquett";
+import Stats from "../Stats/Stats";
 
 import * as keys from '../../config/keys';
+
 
 /*Importing in App component are the props and actions, needed to routing and passing ID's
 * to containers of a propper functionality*/
@@ -94,9 +96,12 @@ class App extends Component {
                                                                           ? <Settings/>
                                                                           : (showPage === 'search'
                                                                                   ? <Search/>
-                                                                                  : (showPage === 'banquett'
-                                                                                      ? <Banquett/>
-                                                                                      : <Home/>)
+                                                                                  : (showPage === 'stats'
+                                                                                      ? <Stats />
+                                                                                      : (showPage === 'banquett'
+                                                                                          ? <Banquett/>
+                                                                                          : <Home/>)
+                                                                                    )
                                                                           )
                                                                   )
                                                           )
