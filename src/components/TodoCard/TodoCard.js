@@ -4,24 +4,25 @@ import React from 'react';
 import '../../styles/global.scss';
 import './TodoCard.scss';
 import '../../styles/global.scss';
+import TodoCardButton from "./TodoCardButton";
 
 const TodoCard = (props) => {
     const { oneTodo } = props;
     return (
-        <div className="row">
-            <div className="col s12 m6">
-                <div className="card blue-grey darken-1 hoverable">
-                    <div className="card-content white-text">
-                        <span className="card-title">Here will be meal-type or smth</span>
+        <segment className="card">
+            <div className="">
+                <div className="">
+                    <div className="">
+                        <span className="">Here will be meal-type or smth</span>
                         <p>{oneTodo.todo}</p>
                     </div>
-                    <div className="card-action">
-                        <p className={'todo-action-button'} >Mark copleted</p>
-                        <a href="#">Delete</a>
+                    <div className="todo-button-container">
+                        <TodoCardButton>Some test text</TodoCardButton>
+                        <TodoCardButton>Some test text</TodoCardButton>
                     </div>
                 </div>
             </div>
-        </div>
+        </segment>
 
     )
 };

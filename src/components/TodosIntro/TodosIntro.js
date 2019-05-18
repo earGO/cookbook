@@ -2,7 +2,7 @@ import React from 'react';
 
 const TodosIntro = () => {
     return (
-        <div>
+        <div className={'container-flex todolist-container'}>
             <p>This is a TodosIntro dumb React Component</p>
         </div>
 

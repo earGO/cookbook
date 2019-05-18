@@ -79,7 +79,7 @@ class App extends Component {
         {showPage === 'login'
             ? <Login onRouteChange={onRouteChange}/>
               : ( showPage === 'home'
-                    ? <Home user={user} date={TODAY} onRouteChange={onRouteChange}/>
+                    ? <Home user={user} date={TODAY} onRouteChange={onRouteChange} classname={'container-fles'}/>
                   : (showPage === 'planner'
                           ? <Planner/>
                           : (showPage === 'recipe'

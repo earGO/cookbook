@@ -5,6 +5,7 @@ import TodoList from "../../components/TodoList/TodoList";
 import {connect} from "react-redux";
 import { getCurrentTodos,markTodoCompleted } from "./actions";
 import {markTodoReducer} from "./reducers";
+import '../../styles/global.scss';
 
 
 const mapStateToProps = (state) =>{
@@ -33,7 +34,7 @@ class ToDos extends React.Component {
             onRouteChange,onMarkTodoCompleted } = this.props;
         if(!todosPending){
             return (
-                <div>
+                <div className={'container-flex'}>
                     <TodosIntro/>
                     <TodosMenu/>
                     <TodoList onRouteChange={onRouteChange} todosObject={todosObject} todosPending={todosPending} onMarkTodoCompleted={onMarkTodoCompleted}/>

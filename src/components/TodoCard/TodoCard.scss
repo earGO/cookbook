@@ -1,4 +1,21 @@
-.todo-action-button{
+@import "../../styles/global";
+
+.card{
+  width:90%;
+  border:1px solid lightgray;
+  @include borderR(0.5);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  transition:all $transition-time-basic;
+}
+
+.card:hover {
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  transform: scale(1.01);
+}
+
+.todo-button-container{
+  display: flex;
+  flex-flow:row wrap;
   background-color: #282c34;
 }
 

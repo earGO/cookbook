@@ -1,0 +1,12 @@
+@import '../../styles/global.scss';
+
+.todo-button{
+  border:1px solid lightgray;
+  @include borderR(0.1);
+  transition:all $transition-time-basic;
+}
+
+.todo-button:hover{
+  cursor:pointer;
+  transform: scale(1.01);
+}

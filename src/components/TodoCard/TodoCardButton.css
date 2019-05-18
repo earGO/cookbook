@@ -59,28 +59,15 @@
     width: 60vw;
   }
 }
-.card {
-  width: 90%;
+.todo-button {
   border: 1px solid lightgray;
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  border-radius: 0.1rem;
   transition: all 0.075s;
 }
 
-.card:hover {
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+.todo-button:hover {
+  cursor: pointer;
   transform: scale(1.01);
 }
 
-.todo-button-container {
-  display: flex;
-  flex-flow: row wrap;
-  background-color: #282c34;
-}
-
-.todo-action-button:hover {
-  cursor: pointer;
-  background-color: lightgray;
-}
-
-/*# sourceMappingURL=TodoCard.css.map */
+/*# sourceMappingURL=TodoCardButton.css.map */
