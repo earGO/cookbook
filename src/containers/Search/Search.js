@@ -1,4 +1,10 @@
 import React from 'react';
+import SearchIntro from "../../components/SearchIntro/SearchIntro";
+import SearchInput from "../../components/SearchInput/SearchInput";
+import SearchCategories from "../../components/SearchCategories/SearchCategories";
+import SearchSortBy from "../../components/SearchSortBy/SearchSortBy";
+import SearchRecipeList from "../../components/SearchRecipeList/SearchRecipeList";
+import SearchTopWrapper from "../../components/SearchTopWrapper/SearchTopWrapper";
 
 
 const initialState = {}
@@ -12,34 +18,22 @@ class Search extends React.Component {
 
     componentDidMount() {
         this.setState(initialState)
-        console.log(this.state)
     }
 
     /*a debugging console logging*/
     componentDidUpdate() {
-        console.log(this.state)
     }
 
     render() {
         return (
             <article className={'bordered'}>
-                <div className={'row'}>
-                    <h3>Find recipes by categorie or ingredient</h3>
-                </div>
-                <div className={'row'}>
-                    <div className={'col s1 m2 l3'}>                </div>
-                    <div className={'col s10 m8 l6'}>
-                        <input placeholder={'What do you wanna cook? '}/>
-                    </div>
-                    <div className={'col s1 m2 l3'}>                </div>
-                </div>
-                <div className={'row'}>
-                    <div className={'col s1 m2 l3'}></div>
-                    <div className={'col s10 m8 l6'}>
-                        placeholder for a narrowers
-                    </div>
-                    <div className={'col s1 m2 l3'}></div>
-                </div>
+                <SearchTopWrapper ref={this.htmlModule}>
+                    <SearchIntro/>
+                    <SearchInput/>
+                </SearchTopWrapper>
+                <SearchCategories/>
+                <SearchSortBy/>
+                <SearchRecipeList/>
             </article>
         )
     }

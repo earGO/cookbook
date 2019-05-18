@@ -1,9 +1,0 @@
-.card-small-grow {
-  transition: 0.4s all;
-}
-
-.card-small-grow:hover {
-  transform: scale(1.025);
-}
-
-/*# sourceMappingURL=CardSmall.css.map */

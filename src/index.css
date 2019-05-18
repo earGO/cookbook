@@ -29,6 +29,11 @@ code {
   font-size:1.5vw;
 }
 
+.ph10{
+  padding-left: $sizing-unit;
+  padding-right: $sizing-unit;
+}
+
 /*sticky footer CSS from Materialize*/
 
 body {
