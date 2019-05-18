@@ -12,7 +12,6 @@ const DashboardCards = (props) => {
         if(meals.length){
             const MEAL = meals.find(isCooked);
             const TODOS = todos;
-            console.log('todos array in ListOfCards component:\n',props.todos)
             if(groceryDay){
                 const GROCERIES = groceries;
                 return (

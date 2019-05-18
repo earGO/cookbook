@@ -13,7 +13,6 @@ export const getCurrentTodos = async (date,dispatch) => {
     try {
         const fetchDate = Date.parse(date)
         const url = urlConstructor(BACKEND_URI,'todos/',fetchDate);
-        console.log('in actions for Todos component fetching day at URL: ',url);
         const promised = fetch(url);
         const response = await Promise.resolve(promised);
         const data = await response.json();
@@ -25,6 +24,29 @@ export const getCurrentTodos = async (date,dispatch) => {
     } catch (error) {
         dispatch({
             type: CONSTANTS.ALL_TODOS_REQUEST_FAILED,
+            payload: error
+        })
+    }
+};
+
+export const markTodoCompleted = async (dayID,todoID,dispatch) => {
+    dispatch({
+        type: CONSTANTS.MARK_TODO_REQUEST_PENDING,
+    });
+    try {
+        const REQ_STRING = dayID.toString()+'/'+todoID;
+        const url = urlConstructor(BACKEND_URI,'todos/mark/',REQ_STRING);
+        const promised = fetch(url);
+        const response = await Promise.resolve(promised);
+        const data = await response.json();
+        const todos = data;
+        dispatch({
+            type: CONSTANTS.MARK_TODO_REQUEST_SUCCESS,
+            payload: todos
+        })
+    } catch (error) {
+        dispatch({
+            type: CONSTANTS.MARK_TODO_REQUEST_FAILED,
             payload: error
         })
     }

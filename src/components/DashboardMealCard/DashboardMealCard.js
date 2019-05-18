@@ -1,7 +1,6 @@
 import React from 'react';
 
 const DashboardMealCard = (props) => {
-    console.log('props in DashBoardMealCard be like: ',props)
     const { recipeName,recipeImage,recipeID } = props.meal;
     const { onRouteChange } = props;
     return (

@@ -29,9 +29,9 @@ class Navbar extends React.Component {
                                     >HOME</div>
                                 </li>
                                 <li  className={'top-nav-link ph10'}
-                                    onClick={()=>onRouteChange('recipes')}>
+                                    onClick={()=>onRouteChange('planner')}>
                                     <div className={'grey-text text-darken-4'}
-                                    >Recipes</div>
+                                    >Planner</div>
                                 </li>
                                 <li className={'top-nav-link ph10'}
                                     onClick={()=>onRouteChange('todos')}>
@@ -80,9 +80,9 @@ class Navbar extends React.Component {
                         >HOME</div>
                     </li>
                     <li  className={'top-nav-link ph10'}
-                         onClick={()=>onRouteChange('recipes')}>
+                         onClick={()=>onRouteChange('planner')}>
                         <div className={'grey-text text-darken-4'}
-                        >Recipes</div>
+                        >Planner</div>
                     </li>
                     <li className={'top-nav-link ph10'}
                         onClick={()=>onRouteChange('todos')}>

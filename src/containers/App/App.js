@@ -9,7 +9,6 @@ import Footer from "../../components//Footer/Footer";
 
 import Home from "../Home/Home";
 import Login from "../Login/Login";
-import Recipes from "../Recipes/Recipes";
 import Recipe from "../Recipe/Recipe";
 import ToDos from "../ToDos/ToDos";
 import Reminders from "../Reminders/Reminders";
@@ -21,6 +20,7 @@ import Banquett from "../Banquett/Banquett";
 import Stats from "../Stats/Stats";
 
 import * as keys from '../../config/keys';
+import Planner from "../Planner/Planner";
 
 
 /*Importing in App component are the props and actions, needed to routing and passing ID's
@@ -80,8 +80,8 @@ class App extends Component {
             ? <Login onRouteChange={onRouteChange}/>
               : ( showPage === 'home'
                     ? <Home user={user} date={TODAY} onRouteChange={onRouteChange}/>
-                  : (showPage === 'recipes'
-                          ? <Recipes/>
+                  : (showPage === 'planner'
+                          ? <Planner/>
                           : (showPage === 'recipe'
                                   ? <Recipe mealId={singleId}/>
                                   : (showPage === 'todos'

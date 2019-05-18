@@ -2,10 +2,11 @@ import React from 'react';
 import { isActive } from '../../helpers/arrayFunctions';
 
 const DashboardTodosCard = (props) => {
-    const {todos} = props;
+    const { todos,onRouteChange } = props;
     const FIRST_TODO = todos.find(isActive);
     return (
-        <section className="card small">
+        <section className="card small"
+                 onClick={()=>onRouteChange('todos')}>
             <div className="card-image">
                 <img src=""  alt={''}/>
                 <span className="card-title">Todos</span>

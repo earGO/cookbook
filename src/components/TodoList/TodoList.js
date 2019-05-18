@@ -1,16 +1,27 @@
 import React from 'react';
-import SingleTodo from "../SingleTodo/SingleTodo";
 import FancyTodo from "../FancyTodo/FancyTodo";
+import TodoCard from "../TodoCard/TodoCard";
 
 const TodoList = (props) => {
-    const { onRouteChange,currentTodos,todosPending } = props;
-    if(!todosPending){
-        if(currentTodos.length){
-            console.log('Todolist components ees todos array as: \n',currentTodos);
+    const { todosObject,todosPending, ...other } = props;
+    const { dayID,todos } = todosObject;
+    if(!todosPending&&todos) {
+        if (todos.length) {
+            console.log('TodoList sees todos as: ', todos)
             return (
                 <div className={'container row'}>
-                    <SingleTodo/>
-                    <SingleTodo/>
+                    {
+                        todos.map((oneTodo, key) => {
+                            return (
+                                <TodoCard
+                                    key={key}
+                                    oneTodo={oneTodo}
+                                    dayID={dayID}
+                                    {...other}
+                                />
+                            )
+                        })
+                    }
                     <FancyTodo/>
                 </div>
 

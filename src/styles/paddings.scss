@@ -5,3 +5,17 @@
   padding-left: $half-basic;
   padding-right: $half-basic;
 }
+
+@mixin pad($n){
+  padding:$n * 1rem;
+}
+
+@mixin padH($n){
+  padding-left:$n*1rem;
+  padding-right:$n*1rem;
+}
+
+@mixin padV($n){
+  padding-top:$n*1rem;
+  padding-bottom:$n*1rem;
+}

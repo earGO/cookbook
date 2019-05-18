@@ -3,20 +3,23 @@ import TodosIntro from "../../components/TodosIntro/TodosIntro";
 import TodosMenu from "../../components/TodosMenu/TodosMenu";
 import TodoList from "../../components/TodoList/TodoList";
 import {connect} from "react-redux";
-import {getCurrentTodos} from "./actions";
+import { getCurrentTodos,markTodoCompleted } from "./actions";
+import {markTodoReducer} from "./reducers";
 
 
 const mapStateToProps = (state) =>{
     return {
-        currentTodos:state.getCurrentTodosReducer.currentTodos,
+        todosObject:state.getCurrentTodosReducer.todosObject,
         todosPending:state.getCurrentTodosReducer.todosPending,
-        error:state.getCurrentTodosReducer.error
+        error:state.getCurrentTodosReducer.error,
+        markTodosPending:state.markTodoReducer.markTodosPending
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onRequestCurrentTodos:(date) => getCurrentTodos(date,dispatch)
+        onRequestCurrentTodos:(date) => getCurrentTodos(date,dispatch),
+        onMarkTodoCompleted:(dayId,todoId) => markTodoCompleted(dayId,todoId,dispatch)
     }
 };
 class ToDos extends React.Component {
@@ -26,14 +29,14 @@ class ToDos extends React.Component {
     }
 
     render() {
-        const { currentTodos,todosPending,
-            onRouteChange } = this.props;
+        const { todosObject,todosPending,
+            onRouteChange,onMarkTodoCompleted } = this.props;
         if(!todosPending){
             return (
                 <div>
                     <TodosIntro/>
                     <TodosMenu/>
-                    <TodoList onRouteChange={onRouteChange} currentTodos={currentTodos} todosPending={todosPending}/>
+                    <TodoList onRouteChange={onRouteChange} todosObject={todosObject} todosPending={todosPending} onMarkTodoCompleted={onMarkTodoCompleted}/>
                 </div>
 
             )

@@ -31,9 +31,9 @@ class Home extends React.Component {
         if(!dayIsPending){
             const MEALS = actualDay.meals;
             const TODOS = actualDay.todos;
+            const ID = actualDay._id;
             const GROCERIES = actualDay.groceries;
             const GROCERIEDAY = actualDay.groceryDay;
-            console.log('props in Home smart component be lie: ',this.props);
             return (
                 <section className={'container row bordered center-align'}>
                     <div className="col s1 m2 l2"></div>

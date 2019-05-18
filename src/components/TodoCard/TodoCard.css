@@ -1,0 +1,10 @@
+.todo-action-button {
+  background-color: #282c34;
+}
+
+.todo-action-button:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+/*# sourceMappingURL=TodoCard.css.map */
