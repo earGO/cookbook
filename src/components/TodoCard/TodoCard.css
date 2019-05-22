@@ -3,33 +3,6 @@
 /*timing*/
 /*margins*/
 /*allround*/
-.m0 {
-  margin: 0;
-}
-
-.m5 {
-  margin: 0.25vw;
-}
-
-.m10 {
-  margin: 0.5vw;
-}
-
-.m15 {
-  margin: 0.75vw;
-}
-
-/*symmetrical horizontal*/
-.mh5 {
-  margin-left: 0.25vw;
-  margin-right: 0.25vw;
-}
-
-.mh10 {
-  margin-left: 0.5vw;
-  margin-right: 0.5vw;
-}
-
 /*padding*/
 .ph10 {
   padding-left: 0.5vw;
@@ -75,12 +48,18 @@
 .todo-button-container {
   display: flex;
   flex-flow: row wrap;
-  background-color: #282c34;
+  align-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: inherit;
 }
 
-.todo-action-button:hover {
-  cursor: pointer;
-  background-color: lightgray;
+.complete:hover {
+  color: green;
+}
+
+.delete:hover {
+  color: red;
 }
 
 /*# sourceMappingURL=TodoCard.css.map */

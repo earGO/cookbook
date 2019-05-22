@@ -2,11 +2,15 @@
 
 .todo-button{
   border:1px solid lightgray;
-  @include borderR(0.1);
-  transition:all $transition-time-basic;
+  border-radius: inherit;
+  margin:0 auto;
+  @include pad(1);
+  @include margV(1);
+  transition: inherit;
 }
 
 .todo-button:hover{
   cursor:pointer;
-  transform: scale(1.01);
+  transform: scale(1.1);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
 }

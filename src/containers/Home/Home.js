@@ -26,12 +26,11 @@ class Home extends React.Component {
     }
 
     render() {
-        const {user,date,
+        const {user,
                 onRouteChange,actualDay,dayIsPending} = this.props;
         if(!dayIsPending){
             const MEALS = actualDay.meals;
             const TODOS = actualDay.todos;
-            const ID = actualDay._id;
             const GROCERIES = actualDay.groceries;
             const GROCERIEDAY = actualDay.groceryDay;
             return (

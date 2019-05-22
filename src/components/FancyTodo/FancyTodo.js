@@ -2,7 +2,7 @@ import React from 'react';
 
 const FancyTodo = () => {
     return (
-        <segment className="card">
+        <div className="card">
             <div className="">
                 <div className="">
                     <img src="https://lorempixel.com/100/190/nature/6" alt={''}/>
@@ -13,11 +13,11 @@ const FancyTodo = () => {
                         <p>I am a fancy event to do. Like "buy candles for a banquette"</p>
                     </div>
                     <div className="">
-                        <a href="#">This is a link</a>
+                        <a href="/">This is a link</a>
                     </div>
                 </div>
             </div>
-        </segment>
+        </div>
 
     )
 };

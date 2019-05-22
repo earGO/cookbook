@@ -1,0 +1,9 @@
+$action-colors: (
+        'complete': green,
+        'delete': red,
+        'warning': orange
+);
+
+@function action-color($key) {
+  @return map-get($action-colors, $key);
+}

@@ -3,33 +3,6 @@
 /*timing*/
 /*margins*/
 /*allround*/
-.m0 {
-  margin: 0;
-}
-
-.m5 {
-  margin: 0.25vw;
-}
-
-.m10 {
-  margin: 0.5vw;
-}
-
-.m15 {
-  margin: 0.75vw;
-}
-
-/*symmetrical horizontal*/
-.mh5 {
-  margin-left: 0.25vw;
-  margin-right: 0.25vw;
-}
-
-.mh10 {
-  margin-left: 0.5vw;
-  margin-right: 0.5vw;
-}
-
 /*padding*/
 .ph10 {
   padding-left: 0.5vw;
@@ -61,13 +34,18 @@
 }
 .todo-button {
   border: 1px solid lightgray;
-  border-radius: 0.1rem;
-  transition: all 0.075s;
+  border-radius: inherit;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: inherit;
 }
 
 .todo-button:hover {
   cursor: pointer;
-  transform: scale(1.01);
+  transform: scale(1.1);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=TodoCardButton.css.map */

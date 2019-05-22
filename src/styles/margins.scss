@@ -1,24 +1,16 @@
 /*margins*/
 /*allround*/
-.m0{
-  margin:0;
-}
-.m5{
-  margin:0.5*$sizing-unit;
-}
-.m10{
-  margin: $sizing-unit;
-}
-.m15{
-  margin: 1.5*$sizing-unit;
+
+@mixin marg($n){
+  padding:$n * 1rem;
 }
 
-/*symmetrical horizontal*/
-.mh5{
-  margin-left:0.5*$sizing-unit;
-  margin-right:0.5*$sizing-unit;
+@mixin margH($n){
+  padding-left:$n*1rem;
+  padding-right:$n*1rem;
 }
-.mh10{
-  margin-left:$sizing-unit;
-  margin-right:$sizing-unit;
+
+@mixin margV($n){
+  padding-top:$n*1rem;
+  padding-bottom:$n*1rem;
 }

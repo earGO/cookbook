@@ -11,12 +11,12 @@ import App from "./containers/App/App";
 import { naviReducer,userReduser,todosReduser,remindersReduser } from "./containers/App/reducers";
 import { getOneRecipe } from "./containers/Recipe/reducers";
 import { getActualDayReducer } from "./containers/Home/reducers";
-import { getCurrentTodosReducer,markTodoReducer } from "./containers/ToDos/reducers";
+import { getCurrentTodosReducer} from "./containers/ToDos/reducers";
 
 const rootReducer = combineReducers({naviReducer,userReduser,todosReduser,remindersReduser,
     getOneRecipe,
     getActualDayReducer,
-    getCurrentTodosReducer,markTodoReducer });
+    getCurrentTodosReducer });
 
 const store = createStore(rootReducer,applyMiddleware(thunkMiddleware))
 

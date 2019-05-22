@@ -19,7 +19,6 @@ import Search from "../Search/Search";
 import Banquett from "../Banquett/Banquett";
 import Stats from "../Stats/Stats";
 
-import * as keys from '../../config/keys';
 import Planner from "../Planner/Planner";
 
 
@@ -27,7 +26,6 @@ import Planner from "../Planner/Planner";
 * to containers of a propper functionality*/
 
 const
-    BACKEND_URI = keys.BACKEND_URI,
     TODAY = new Date();
 
 const mapStateToProps = (state) =>{
@@ -40,10 +38,6 @@ const mapStateToProps = (state) =>{
       user:state.userReduser.user,
     userIsPending:state.userReduser.userIsPending,
     userError: state.userReduser.userError,
-    /*todos*/
-      todos:state.todosReduser.todos,
-    /*reminders*/
-    reminders:state.remindersReduser.reminders,
   }
 };
 

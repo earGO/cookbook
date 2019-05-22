@@ -6,8 +6,8 @@ import '../../styles/global.scss';
 class Navbar extends React.Component {
 
     componentDidMount() {
-        var elem = document.querySelector(".sidenav");
-        var instance = M.Sidenav.init(elem, {
+        var elems = document.querySelector(".sidenav");
+        var instances = M.Sidenav.init(elems, {
             edge: "left",
             inDuration: 250
         });

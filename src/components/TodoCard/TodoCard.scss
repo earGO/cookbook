@@ -16,10 +16,15 @@
 .todo-button-container{
   display: flex;
   flex-flow:row wrap;
-  background-color: #282c34;
+  align-content: center;
+  @include padV(1);
+  border-radius: inherit;
 }
 
-.todo-action-button:hover{
-  cursor:pointer;
-  background-color: lightgray;
+.complete:hover{
+  color:action-color('complete');
+}
+
+.delete:hover{
+  color:action-color('delete');
 }

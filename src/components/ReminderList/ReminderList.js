@@ -1,12 +1,9 @@
 import React from 'react';
-import ReminderCard from "../ReminderCard/ReminderCard";
 
 const ReminderList = () => {
     return (
         <div>
-           <ReminderCard />
-            <ReminderCard />
-            <ReminderCard />
+            <p>a place for a ReminderCard or smth</p>
         </div>
 
     )

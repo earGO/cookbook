@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {isCooked,isActive} from "../../helpers/arrayFunctions";
+import {isCooked } from "../../helpers/arrayFunctions";
 import DashboardCardWrapper from "../DashboardCardWrapper/DashboardCardWrapper";
 import DashboardMealCard from "../DashboardMealCard/DashboardMealCard";
 import DashboardTodosCard from "../DashboardTodosCard/DashboardTodosCard";
