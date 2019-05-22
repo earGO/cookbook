@@ -1,6 +1,7 @@
+
 import React from 'react';
 
-const VideoRecipe = ({video}) => {
+const RecipeVideo = ({video}) => {
     const videoUrl = video+'embed';
     const trueUrl = videoUrl.replace('embed','').replace('watch?v=','embed/')
     return (
@@ -11,6 +12,6 @@ const VideoRecipe = ({video}) => {
                     allowFullScreen></iframe>
         </div>
     )
-}
+};
 
-export default VideoRecipe;
+export default RecipeVideo;

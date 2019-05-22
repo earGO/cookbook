@@ -17,7 +17,8 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onRequestCurrentTodos:(date) => getCurrentTodos(date,dispatch)
+        onRequestCurrentTodos:(date) => getCurrentTodos(date,dispatch),
+        onMarkTodoCompleted:(dayID,todoId) => markTodoCompleted(dayID,todoId,dispatch)
     }
 };
 class ToDos extends React.Component {
@@ -28,25 +29,40 @@ class ToDos extends React.Component {
 
     render() {
         const { todosObject,todosPending,
-            onRouteChange } = this.props;
+            onRouteChange,onMarkTodoCompleted } = this.props;
         if(!todosPending){
             const todosArray = todosObject.todos;
             if(todosArray){
-                const activeTodos = todosObject.todos.map(todo=>{
+                const activeTodos = todosObject.todos.filter(todo=>{
                     if(todo.active===true){
                         return todo
                     }
                 });
                 console.log('list of active todos be like: ',activeTodos)
-            }
-            return (
+                const NEW_TODOS_OBJECT = {
+                    dayID: todosObject.dayID,
+                    todos:activeTodos
+                };
+                console.log(NEW_TODOS_OBJECT);
+                return (
                     <div className={'container-flex'}>
                         <TodosIntro/>
                         <TodosMenu/>
-                        <TodoList onRouteChange={onRouteChange} todosObject={todosObject} todosPending={todosPending}/>
+                        <TodoList onRouteChange={onRouteChange} todosObject={NEW_TODOS_OBJECT} todosPending={todosPending} onMarkTodoCompleted={onMarkTodoCompleted}/>
                     </div>
 
                 )
+            } else {
+                return (
+                   <div className={'container-flex'}>
+                       <TodosIntro/>
+                       <TodosMenu/>
+                       <p>Waiting for TodoList</p>
+                   </div>
+
+               )
+            }
+
 
         } else {
             return (

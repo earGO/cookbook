@@ -3,14 +3,17 @@ import React from 'react';
 import {connect} from "react-redux";
 import { getOneRecipe } from "./actions";
 
-import VideoRecipe from "../../components/VideoRecipe/VideoRecipe";
 import RecipeMenu from "../../components/RecipeMenu/RecipeMenu";
 import RecipeInfo from "../../components/RecipeInfo/RecipeInfo";
-import Difficulty from "../../components/Difficulty/Difficulty";
-import Ingredients from "../../components/Ingredients/Ingredients";
 import Utensils from "../../components/Utensils/Utensils";
 import NutritionStats from "../../components/NutritionStats/NutritionStats";
 import Steps from "../../components/Steps/Steps";
+import RecipeDifficulty from "../../components/RecipeDifficulty/RecipeDifficulty";
+import RecipeVideo from "../../components/RecipeVideo/RecipeVideo";
+import RecipeIngredients from "../../components/RecipeIngredients/RecipeIngredients";
+import RecipeUtensils from "../../components/RecipeUtensils";
+import RecipeNutritionStats from "../../components/RecipeNutritionStats/RecipeNutritionStats";
+import RecipeSteps from "../../components/RecipeSteps/RecipeSteps";
 
 
 const mapStateToProps = (state) =>{
@@ -41,14 +44,14 @@ class Recipe extends React.Component {
             console.log('rendering recipe\n',recipe)
             return (
                     <div>
-                        <VideoRecipe video={recipe.video} image={recipe.image}/>
+                        <RecipeVideo video={recipe.video} image={recipe.image}/>
                         <RecipeMenu/>
                         <RecipeInfo name={recipe.mealName} cousine={recipe.area} category={recipe.category}/>
-                        <Difficulty/>
-                        <Ingredients ingredients={recipe.ingredients}/>
-                        <Utensils/>
-                        <NutritionStats/>
-                        <Steps steps={recipe.steps}/>
+                        <RecipeDifficulty/>
+                        <RecipeIngredients ingredients={recipe.ingredients}/>
+                        <RecipeUtensils/>
+                        <RecipeNutritionStats/>
+                        <RecipeSteps steps={recipe.steps}/>
                     </div>
                 )
             } else {

@@ -17,7 +17,6 @@ const TodoCard = (props) => {
                     </div>
                     <div className="todo-button-container">
                         <TodoCardButton {...props}>Completed</TodoCardButton>
-                        <TodoCardButton>Delete</TodoCardButton>
                     </div>
         </div>
 

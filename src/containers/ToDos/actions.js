@@ -28,3 +28,26 @@ export const getCurrentTodos = async (date,dispatch) => {
         })
     }
 };
+
+export const markTodoCompleted = async (dayID,todoID,dispatch) => {
+    dispatch({
+        type: CONSTANTS.MARK_TODO_REQUEST_PENDING,
+    });
+    try {
+        const REQ_STRING = dayID.toString()+'/'+todoID;
+        const url = urlConstructor(BACKEND_URI,'todos/mark/',REQ_STRING);
+        const promised = fetch(url);
+        const response = await Promise.resolve(promised);
+        const data = await response.json();
+        const todos = data;
+        dispatch({
+            type: CONSTANTS.MARK_TODO_REQUEST_SUCCESS,
+            payload: todos
+        })
+    } catch (error) {
+        dispatch({
+            type: CONSTANTS.MARK_TODO_REQUEST_FAILED,
+            payload: error
+        })
+    }
+};

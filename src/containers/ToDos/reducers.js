@@ -14,6 +14,13 @@ export const getCurrentTodosReducer = (state=initialDay,action={})=>{
             return {...state,todosObject:action.payload,todosPending:false};
         case CONSTANTS.ALL_TODOS_REQUEST_FAILED:
             return {...state,error:action.payload,todosPending:false};
+        case CONSTANTS.MARK_TODO_REQUEST_PENDING:
+            return {...state,todosPending:true};
+        case CONSTANTS.MARK_TODO_REQUEST_SUCCESS:
+            return {...state,todosObject:action.payload,todosPending:false};
+        case CONSTANTS.MARK_TODO_REQUEST_FAILED:
+            return {...state,error:action.payload,todosPending:false};
+
         default:
             return state;
     }
