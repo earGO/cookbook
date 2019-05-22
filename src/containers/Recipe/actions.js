@@ -13,8 +13,9 @@ export const getOneRecipe = async (mealId,dispatch)=>{
         let url=BACKEND_URI +'recipes/'+ mealId;
         const promised = await fetch(url);
         const response =  await Promise.resolve(promised);
-        const data = await response;
+        const data = await response.json();
         const recipe = data;
+        console.log('action getOneREcipe fetchet this:\n',recipe)
         dispatch({
             type:CONSTANTS.RECIPE_REQUEST_SUCCESS,
             payload: recipe

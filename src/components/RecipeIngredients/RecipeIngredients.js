@@ -3,9 +3,6 @@ import Ingredient from "../Ingredient/Ingredient";
 
 
 class RecipeIngredients extends React.Component {
-    constructor(props) {
-        super(props)
-    };
 
     render() {
         const { ingredients } = this.props;

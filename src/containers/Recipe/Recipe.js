@@ -5,13 +5,10 @@ import { getOneRecipe } from "./actions";
 
 import RecipeMenu from "../../components/RecipeMenu/RecipeMenu";
 import RecipeInfo from "../../components/RecipeInfo/RecipeInfo";
-import Utensils from "../../components/Utensils/Utensils";
-import NutritionStats from "../../components/NutritionStats/NutritionStats";
-import Steps from "../../components/Steps/Steps";
 import RecipeDifficulty from "../../components/RecipeDifficulty/RecipeDifficulty";
 import RecipeVideo from "../../components/RecipeVideo/RecipeVideo";
 import RecipeIngredients from "../../components/RecipeIngredients/RecipeIngredients";
-import RecipeUtensils from "../../components/RecipeUtensils";
+import RecipeUtensils from "../../components/RecipeUtensils/RecipeUtensils";
 import RecipeNutritionStats from "../../components/RecipeNutritionStats/RecipeNutritionStats";
 import RecipeSteps from "../../components/RecipeSteps/RecipeSteps";
 
@@ -33,7 +30,6 @@ const mapDispatchToProps = (dispatch) => {
 class Recipe extends React.Component {
 
     componentDidMount() {
-        console.log('Recipe component sees recipe ID as ',this.props.mealId)
         this.props.onRequestRecipe(this.props.mealId)
     }
 
@@ -41,7 +37,6 @@ class Recipe extends React.Component {
         const recipe = this.props.singleRecipe;
         const singleRecipePending = this.props.singleRecipePending;
         if(!singleRecipePending){
-            console.log('rendering recipe\n',recipe)
             return (
                     <div>
                         <RecipeVideo video={recipe.video} image={recipe.image}/>

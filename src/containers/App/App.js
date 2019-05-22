@@ -56,7 +56,6 @@ class App extends Component {
     await this.props.onLogin();
     await this.props.onRequestTodos(['Put fish out of freezer to fridge','Put beans into water','Fill steamer with water','Something else']);
     await this.props.onRequestReminders(['Go buy some food','Dinner with Robin at 19 p.m. at hers']);
-    console.log('monted app')
   };
 
   render() {

@@ -3,10 +3,6 @@ import Step from "../Step/Step";
 
 
 class RecipeSteps extends React.Component {
-    constructor(props) {
-        super(props)
-    };
-
 
     render() {
         const {steps} = this.props

@@ -33,11 +33,7 @@ class ToDos extends React.Component {
         if(!todosPending){
             const todosArray = todosObject.todos;
             if(todosArray){
-                const activeTodos = todosObject.todos.filter(todo=>{
-                    if(todo.active===true){
-                        return todo
-                    }
-                });
+                const activeTodos = todosObject.todos.filter(todo=>{return todo.active===true});
                 console.log('list of active todos be like: ',activeTodos)
                 const NEW_TODOS_OBJECT = {
                     dayID: todosObject.dayID,
