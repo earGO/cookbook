@@ -52,20 +52,75 @@
     width: 60vw;
   }
 }
-.todo-button {
-  border: 1px solid lightgray;
-  border-radius: inherit;
-  margin: 0 auto;
-  padding: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  transition: inherit;
+.video-wrapper {
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  margin: 10px auto;
+  border: 1px solid blue;
+  width: 90vw;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 720px;
+  max-height: 400px;
+}
+.video-wrapper .video-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
 }
 
-.todo-button:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .video-wrapper {
+    width: 480px;
+    padding-bottom: 68.25%;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .video-wrapper {
+    width: 480px;
+    padding-bottom: 56.25%;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 738px) {
+  .video-wrapper {
+    width: 516.6px;
+    padding-bottom: 48.25%;
+  }
+}
+/* Medium devices (landscape tablets, 820px and up) */
+@media only screen and (min-width: 820px) {
+  .video-wrapper {
+    width: 574px;
+    padding-bottom: 39.25%;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .video-wrapper {
+    width: 595.2px;
+    padding-bottom: 38.25%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1125px) {
+  .video-wrapper {
+    width: 562.5px;
+    padding-bottom: 35.25%;
+  }
+}
+/* Mega large devices (large laptops and desktops, 1480px and up) */
+@media only screen and (min-width: 1480px) {
+  .video-wrapper {
+    width: 740px;
+    padding-bottom: 33.25%;
+  }
 }
 
-/*# sourceMappingURL=TodoCardButton.css.map */
+/*# sourceMappingURL=RecipeVideo.css.map */

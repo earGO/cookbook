@@ -1,3 +1,41 @@
+@import 'variables';
+
 @mixin borderR($n){
   border-radius:$n*1rem;
 }
+
+@mixin mediaWidthMobile($n){
+  width:$n*$mobile-width-coef;
+}
+
+@mixin mediaWidthMedium($n){
+  width:$n*$medium-width-coef;
+}
+
+@mixin mediaWidthLarge($n){
+  width:$n*$large-width-coef;
+}
+@mixin mediaWidthXLarge($n){
+  width:$n*$xlarge-width-coef;
+}
+
+@mixin videoHeight($m){
+  height:$m*0.5625;
+}
+
+@mixin videoHeightMobile($m){
+  height:$m*0.5625*$mobile-width-coef;
+}
+
+@mixin videoHeightMedium($m){
+  height:$m*0.5625*$medium-width-coef;
+}
+
+@mixin videoHeightLarge($m){
+  height:$m*0.5625*$large-width-coef;
+}
+
+@mixin videoHeightXLarge($m){
+  height:$m*0.5625*$xlarge-width-coef;
+}
+$xlarge-width-coef:0.5;

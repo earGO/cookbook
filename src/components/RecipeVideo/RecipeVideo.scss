@@ -1,0 +1,83 @@
+@import '../../styles/global';
+
+$video-width:100px;
+$video-height:$video-width*0.5625;
+
+.video-wrapper{
+  height: 0;
+  padding-bottom: 56.25%; //16 x 9
+  position: relative;
+  margin: 10px auto;
+  border:1px solid blue;
+  width:90vw;
+  @include borderR(1);
+  overflow: hidden;
+  max-width: 720px;
+  max-height: 400px;
+  .video-frame{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: $media-small-phones) {
+  .video-wrapper{
+    @include mediaWidthMobile($media-small-phones);
+    padding-bottom: 68.25%; //16 x 9
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .video-wrapper{
+    @include mediaWidthMobile($media-small-phones);
+    padding-bottom: 56.25%; //16 x 9
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: $media-medium-devices) {
+  .video-wrapper{
+    @include mediaWidthMedium($media-medium-devices);
+    padding-bottom: 48.25%; //16 x 9
+  }
+}
+
+/* Medium devices (landscape tablets, 820px and up) */
+@media only screen and (min-width: $media-Xmedium-devices) {
+  .video-wrapper{
+    @include mediaWidthMedium($media-Xmedium-devices);
+    padding-bottom: 39.25%; //16 x 9
+  }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: $media-large-devices) {
+  .video-wrapper{
+    @include mediaWidthLarge($media-large-devices);
+    padding-bottom: 38.25%; //16 x 9
+  }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: $media-xtralarge-devices) {
+  .video-wrapper{
+    @include mediaWidthXLarge($media-xtralarge-devices);
+    padding-bottom: 35.25%; //16 x 9
+  }
+}
+
+/* Mega large devices (large laptops and desktops, 1480px and up) */
+@media only screen and (min-width: $media-mega-large-devices) {
+  .video-wrapper{
+    @include mediaWidthXLarge($media-mega-large-devices);
+    padding-bottom: 33.25%; //16 x 9
+  }
+}
+

@@ -13,6 +13,8 @@ import RecipeNutritionStats from "../../components/RecipeNutritionStats/RecipeNu
 import RecipeSteps from "../../components/RecipeSteps/RecipeSteps";
 
 
+import '../../styles/global.scss';
+
 const mapStateToProps = (state) =>{
     return {
         singleRecipe:state.getOneRecipe.singleRecipe,
@@ -38,7 +40,7 @@ class Recipe extends React.Component {
         const singleRecipePending = this.props.singleRecipePending;
         if(!singleRecipePending){
             return (
-                    <div>
+                    <div className={'container-flex'}>
                         <RecipeVideo video={recipe.video} image={recipe.image}/>
                         <RecipeMenu/>
                         <RecipeInfo name={recipe.mealName} cousine={recipe.area} category={recipe.category}/>

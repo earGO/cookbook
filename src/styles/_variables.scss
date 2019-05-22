@@ -8,3 +8,29 @@ $sizing-unit:$half-basic;
 
 /*timing*/
 $transition-time-basic:0.075s;
+
+
+/*Media sizes*/
+/* Small devices (portrait tablets and large phones, 600px and up) */
+$media-small-phones:600px;
+/* Medium devices (landscape tablets, 768px and up) */
+$media-medium-devices:738px;
+
+/* Xtra Medium devices (landscape tablets, 820px and up) */
+$media-Xmedium-devices:820px;
+
+/* Large devices (laptops/desktops, 992px and up) */
+$media-large-devices:992px;
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+$media-xtralarge-devices:1125px;
+
+/* Mega large devices (large laptops and desktops, 1200px and up) */
+$media-mega-large-devices:1480px;
+
+
+/*coeffs for video sizing mixins*/
+$mobile-width-coef:0.8;
+$medium-width-coef:0.7;
+$large-width-coef:0.6;
+$xlarge-width-coef:0.45;

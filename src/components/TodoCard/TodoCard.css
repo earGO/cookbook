@@ -1,6 +1,14 @@
 /*proportional */
 /*basic size for margin and padding*/
 /*timing*/
+/*Media sizes*/
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Xtra Medium devices (landscape tablets, 820px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Mega large devices (large laptops and desktops, 1200px and up) */
+/*coeffs for video sizing mixins*/
 /*margins*/
 /*allround*/
 /*padding*/
@@ -14,12 +22,24 @@
   background-color: lightgray;
 }
 
+/*proportional */
+/*basic size for margin and padding*/
+/*timing*/
+/*Media sizes*/
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Xtra Medium devices (landscape tablets, 820px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Mega large devices (large laptops and desktops, 1200px and up) */
+/*coeffs for video sizing mixins*/
 .container-flex {
   display: flex;
   align-content: center;
   flex-flow: column wrap;
   flex-direction: column;
   margin: 0 auto;
+  border: 1px solid green;
 }
 
 /* Extra small devices (phones, 600px and down) */
