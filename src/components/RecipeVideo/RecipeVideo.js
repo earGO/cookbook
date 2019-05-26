@@ -5,10 +5,8 @@ import './RecipeVideo.scss';
 import '../../styles/global.scss';
 
 const RecipeVideo = (props) => {
-    console.log(props)
     const videoUrl = props.video+'embed';
-    const trueUrl = videoUrl.replace('embed','').replace('watch?v=','embed/')
-    console.log(trueUrl)
+    const trueUrl = videoUrl.replace('embed','').replace('watch?v=','embed/');
     return (
         <div className={'video-wrapper'}>
             <iframe id="player" type="text/html"

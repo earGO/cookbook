@@ -3,7 +3,10 @@ import React from 'react';
 const ReminderMenu = () => {
     return (
         <div>
-            <p>This is a ReminderMenu dumb React Component</p>
+            <div>Overwiev</div>
+            <div>Stats</div>
+            <div>Ingredients</div>
+            <div>Steps</div>
         </div>
 
     )

@@ -42,7 +42,7 @@ class Recipe extends React.Component {
             return (
                     <div className={'container-flex'}>
                         <RecipeVideo video={recipe.video} image={recipe.image}/>
-                        <RecipeMenu/>
+                        <RecipeMenu onRouteChange={this.props.onRouteChange}/>
                         <RecipeInfo name={recipe.mealName} cousine={recipe.area} category={recipe.category}/>
                         <RecipeDifficulty/>
                         <RecipeIngredients ingredients={recipe.ingredients}/>

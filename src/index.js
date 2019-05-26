@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from "redux";
+import logger  from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'materialize-css';
 import 'material-icons';
 import App from "./containers/App/App";
+
 import { naviReducer,userReduser,todosReduser,remindersReduser } from "./containers/App/reducers";
 import { getOneRecipe } from "./containers/Recipe/reducers";
 import { getActualDayReducer } from "./containers/Home/reducers";
@@ -18,7 +20,7 @@ const rootReducer = combineReducers({naviReducer,userReduser,todosReduser,remind
     getActualDayReducer,
     getCurrentTodosReducer });
 
-const store = createStore(rootReducer,applyMiddleware(thunkMiddleware))
+const store = createStore(rootReducer,applyMiddleware(logger,thunkMiddleware))
 
 ReactDOM.render(<Provider store={store}>
                     <App/>

@@ -1,0 +1,24 @@
+.navbar-toggle-button {
+  height: 2.5rem;
+  width: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-toggle-button:focus {
+  outline: none;
+}
+
+.navbar-toggle-button-line {
+  width: 2.5rem;
+  height: 0.125rem;
+  background-color: azure;
+}
+
+/*# sourceMappingURL=NavbarSideToggleButton.css.map */

@@ -1,9 +1,5 @@
 import React from 'react';
 
-
-const initialState = {};
-
-
 class RecipeUtensils extends React.Component {
 
 

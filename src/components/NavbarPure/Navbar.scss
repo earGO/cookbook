@@ -1,0 +1,49 @@
+@import "../../styles/global";
+
+.pure-navbar{
+  top:0;
+  left: 0;
+  width: 100%;
+  background: darkred;
+  height:5em;
+}
+
+.pure-navbar-navigation{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.navbar-logo{
+  font-size: 2.5rem;
+  color: azure;
+  @include margH(1);
+}
+
+.navbar-navigation-items ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/*this what makes Logo and navigation items to be in different parts of the screen*/
+.pure-navbar-spacer{
+  flex: 1;
+}
+
+.navbar-navigation-items li{
+  @include padH(1);
+}
+
+.navbar-navigation-item{
+  color:azure;
+  text-decoration: none;
+}
+
+.navbar-navigation-item:hover{
+  color:orange;
+  cursor:pointer;
+  text-decoration: none;
+}

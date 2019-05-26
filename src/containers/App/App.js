@@ -4,8 +4,8 @@ import './App.css';
 import { connect } from 'react-redux';
 import { naviAction,getUser,todosAction,remindersAction } from "./actions";
 
-import Navbar from "../../components//Navbar/Navbar";
-import Footer from "../../components//Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 import Home from "../Home/Home";
 import Login from "../Login/Login";
@@ -68,44 +68,48 @@ class App extends Component {
         <Navbar onRouteChange={onRouteChange}/>
         {/**
         * DASHBOARD home screen MUST be the first screen always
-        */}
-        {showPage === 'login'
-            ? <Login onRouteChange={onRouteChange}/>
-              : ( showPage === 'home'
-                    ? <Home user={user} date={TODAY} onRouteChange={onRouteChange} classname={'container-fles'}/>
-                  : (showPage === 'planner'
-                          ? <Planner/>
-                          : (showPage === 'recipe'
-                                  ? <Recipe mealId={singleId}/>
-                                  : (showPage === 'todos'
-                                          ? <ToDos date={TODAY} onRouteChange={onRouteChange}/>
-                                          : (showPage === 'reminders'
-                                                  ? <Reminders/>
-                                                  : (showPage === 'groceries'
-                                                          ? <Groceries/>
-                                                          : (showPage === 'surprise'
-                                                                  ? <Surprise/>
-                                                                  : (showPage === 'settings'
-                                                                          ? <Settings/>
-                                                                          : (showPage === 'search'
-                                                                                  ? <Search/>
-                                                                                  : (showPage === 'stats'
-                                                                                      ? <Stats />
-                                                                                      : (showPage === 'banquett'
-                                                                                          ? <Banquett/>
-                                                                                          : <Home/>)
-                                                                                    )
-                                                                          )
-                                                                  )
-                                                          )
-                                                  )
-                                          )
-                                  )
-                          )
-                  )
-              )
-        }
-        <Footer/>
+         */}
+        <main>
+              {
+              showPage === 'login'
+                  ? <Login onRouteChange={onRouteChange}/>
+                    : ( showPage === 'home'
+                          ? <Home user={user} date={TODAY} onRouteChange={onRouteChange} classname={'container-fles'}/>
+                        : (showPage === 'planner'
+                                ? <Planner/>
+                                : (showPage === 'recipe'
+                                        ? <Recipe mealId={singleId}/>
+                                        : (showPage === 'todos'
+                                                ? <ToDos date={TODAY} onRouteChange={onRouteChange}/>
+                                                : (showPage === 'reminders'
+                                                        ? <Reminders/>
+                                                        : (showPage === 'groceries'
+                                                                ? <Groceries/>
+                                                                : (showPage === 'surprise'
+                                                                        ? <Surprise/>
+                                                                        : (showPage === 'settings'
+                                                                                ? <Settings/>
+                                                                                : (showPage === 'search'
+                                                                                        ? <Search/>
+                                                                                        : (showPage === 'stats'
+                                                                                            ? <Stats />
+                                                                                            : (showPage === 'banquett'
+                                                                                                ? <Banquett/>
+                                                                                                : <Home/>)
+                                                                                          )
+                                                                                )
+                                                                        )
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                    )
+              }
+        </main>
+            <Footer/>
+
       </div>
     );
     }else {

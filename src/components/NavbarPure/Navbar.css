@@ -56,34 +56,54 @@
     width: 60vw;
   }
 }
-.card {
-  width: 90%;
-  border: 1px solid lightgray;
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-  transition: all 0.075s;
+.pure-navbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: darkred;
+  height: 5em;
 }
 
-.card:hover {
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
-  transform: scale(1.01);
-}
-
-.todo-button-container {
+.pure-navbar-navigation {
   display: flex;
-  flex-flow: row wrap;
-  align-content: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-radius: inherit;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
 }
 
-.complete:hover {
-  color: green;
+.navbar-logo {
+  font-size: 2.5rem;
+  color: azure;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-.delete:hover {
-  color: red;
+.navbar-navigation-items ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-/*# sourceMappingURL=TodoCard.css.map */
+/*this what makes Logo and navigation items to be in different parts of the screen*/
+.pure-navbar-spacer {
+  flex: 1;
+}
+
+.navbar-navigation-items li {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.navbar-navigation-item {
+  color: azure;
+  text-decoration: none;
+}
+
+.navbar-navigation-item:hover {
+  color: orange;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=Navbar.css.map */

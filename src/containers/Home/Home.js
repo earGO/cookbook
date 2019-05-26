@@ -4,6 +4,8 @@ import {connect} from "react-redux";
 import { getActualDay } from "./actions";
 import DashboardCards from "../../components/DashboardCards/DashboardCards";
 
+import '../../styles/global.scss';
+
 
 const mapStateToProps = (state) =>{
     return {
@@ -34,7 +36,7 @@ class Home extends React.Component {
             const GROCERIES = actualDay.groceries;
             const GROCERIEDAY = actualDay.groceryDay;
             return (
-                <section className={'container row bordered center-align'}>
+                <section className={'container row bordered center-align testmarginator'}>
                     <div className="col s1 m2 l2"></div>
                     <article className={'col s10 m8 l8 bordered'}>
                         <p>Hello, {user.name}! Let's start your day!</p>

@@ -1,0 +1,94 @@
+@import '../../styles/global';
+
+$video-width:100px;
+$video-height:$video-width*0.5625;
+
+.menu-wrapper {
+  height: 4rem;
+  margin: 10px auto;
+  border: 1px solid blue;
+  width: 90vw;
+  @include borderR(1);
+  overflow: hidden;
+  max-width: 720px;
+  display: flex;
+}
+
+.recipe-menu-items{
+  border:1px solid red;
+  display: flex;
+  height: 100%;
+  width:100%;
+  padding:0;
+  margin: 0;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.recipe-menu-item{
+  border:1px solid green;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+  padding: 1rem 1rem;
+  transition: $transition-time-basic;
+}
+
+.recipe-menu-item:hover{
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: $media-small-phones) {
+  .menu-wrapper{
+    @include mediaWidthMobile($media-small-phones);
+    padding-bottom: 68.25%; //16 x 9
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .menu-wrapper{
+    @include mediaWidthMobile($media-small-phones);
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: $media-medium-devices) {
+  .menu-wrapper{
+    @include mediaWidthMedium($media-medium-devices);
+  }
+}
+
+/* Medium devices (landscape tablets, 820px and up) */
+@media only screen and (min-width: $media-Xmedium-devices) {
+  .menu-wrapper{
+  }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: $media-large-devices) {
+  .menu-wrapper{
+    @include mediaWidthLarge($media-large-devices);
+  }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: $media-xtralarge-devices) {
+  .menu-wrapper{
+    @include mediaWidthXLarge($media-xtralarge-devices);
+  }
+}
+
+/* Mega large devices (large laptops and desktops, 1480px and up) */
+@media only screen and (min-width: $media-mega-large-devices) {
+  .menu-wrapper{
+    @include mediaWidthXLarge($media-mega-large-devices);
+  }
+}
+
